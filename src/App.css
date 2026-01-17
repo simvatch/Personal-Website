@@ -1,0 +1,10 @@
+.header_font {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Background: very dark, almost black (#121212 or #242424)
+Accent / buttons / links: bright blue (#646cff like you already have)
+Highlights: light blue / cyan for hover or floating elements (#4fc3f7)
+Text: off-white for readability (rgba(255,255,255,0.87)) */
