@@ -70,10 +70,10 @@ function BuiltbyText() {
 }
 
 const sections = [
-  { title: 'About', color: '#121212' },
-  { title: 'Projects', color: '#181818' },
-  { title: 'Photography', color: '#1e1e1e' },
-  { title: 'Contact', color: '#242424' }
+  { title: 'About',        color: '#1a1a1a' },
+  { title: 'Projects',     color: '#222222' },
+  { title: 'Photography',  color: '#2b2b2b' },
+  { title: 'Contact',      color: '#343434' }
 ];
 
 function App() {
@@ -87,8 +87,8 @@ function App() {
       {sections.map((section, idx) => (
         <section
           key={idx}
-          className='section'
-          style={{ backgroundColor: section.color }}
+          className='section sticky'
+          style={{ backgroundColor: section.color, zIndex: sections.length + idx}}
         >
           <h2 className='title'>{section.title}</h2>
         </section>
