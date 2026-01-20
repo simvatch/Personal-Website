@@ -1,48 +1,61 @@
 body {
   margin: 0;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
-  justify-content: center;
+  width: 100%;
   background-color: #121212;
   color: rgba(255, 255, 255, 0.87);
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
-.name_text {
-  font-family: "Indie Flower", cursive;
-  font-size: 48px;
-  font-weight: 400;
-  color: #fff;
-  background: linear-gradient(to right, #095fab 10%, #25abe8 40%, #57d75b 40%, #25abe8 80%, #095fab 90%);
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
-  display: inline-block;
+
+main {
+  overflow-y: scroll;
 }
- @keyframes textclip {
-   to {
-     background-position: 200% center;
-   }
- }
 
 .hero {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: -430px;
-  gap: 40px;
-  pointer-events: none;
+  gap: 20px;
 }
 
-.hero svg:last-child {
-  margin-top: -590px;
+.hero svg:first-child {
+  margin-bottom: -150px;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.title {
+  color: #fff;
+  font-size: 5rem;
+  font-family: "Indie Flower", cursive;
+  -webkit-text-stroke: 1px #000;
+}
+
+@supports not (-webkit-text-stroke: 1px #000) {
+  .title {
+    text-shadow:
+      3px 3px 0 #000,
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
 }
 
 /* Background: very dark, almost black (#121212 or #242424)
 Accent / buttons / links: bright blue (#646cff like you already have)
 Highlights: light blue / cyan for hover or floating elements (#4fc3f7)
 Text: off-white for readability (rgba(255,255,255,0.87)) */
+
+/* --bg-about: #181818;
+--bg-projects: #1e1e1e;
+--bg-photos: #20262e; 
+--bg-contact: #242424;*/

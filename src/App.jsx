@@ -3,7 +3,7 @@ import './App.css'
 
 function WelcomeText() {
   return (
-    <svg width="800" height="700" viewBox="0 0 800 700">
+    <svg width="800" height="250" viewBox="0 0 800 250">
       <defs>
         <linearGradient id="textGradientWelcome" x1="0%" y1="0%" x2="200%" y2="0%">
           <stop offset="0%" stopColor="#095fab">
@@ -23,7 +23,7 @@ function WelcomeText() {
           </stop>
         </linearGradient>
 
-        <path id="arcPathWelcome" d="M50,350 A370,300 0 0,1 750,350" fill="transparent" />
+        <path id="arcPathWelcome" d="M50,300 A370,300 0 0,1 750,300" fill="transparent" />
       </defs>
 
       <text fontFamily="Indie Flower" fontSize="150" fill="url(#textGradientWelcome)">
@@ -69,13 +69,31 @@ function BuiltbyText() {
   )
 }
 
+const sections = [
+  { title: 'About', color: '#121212' },
+  { title: 'Projects', color: '#181818' },
+  { title: 'Photography', color: '#1e1e1e' },
+  { title: 'Contact', color: '#242424' }
+];
+
 function App() {
-  const [count, setCount] = useState(0)
   return (
-    <div className='hero'>
-      <WelcomeText />
-      <BuiltbyText />
-    </div>
+    <main>
+      <section className='section hero' style={{ backgroundColor: "#121212" }}>
+        <WelcomeText />
+        <BuiltbyText />
+      </section>
+
+      {sections.map((section, idx) => (
+        <section
+          key={idx}
+          className='section'
+          style={{ backgroundColor: section.color }}
+        >
+          <h2 className='title'>{section.title}</h2>
+        </section>
+      ))}
+    </main>
   )
 }
 
