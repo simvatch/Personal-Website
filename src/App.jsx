@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import ParticleBackground from './About'
 
 function WelcomeText() {
   return (
@@ -88,6 +89,7 @@ function App() {
         <section key={idx} className={`section sticky ${section.className}`} style={{ backgroundColor: section.color, zIndex: sections.length + idx }} >
           {section.title == "About" ? (
             <>
+              <ParticleBackground count={300} />
               <div className='about-left'>
                 <h2 className='title'>About</h2>
               </div>
