@@ -1,0 +1,20 @@
+.viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    bottom: 0;
+}

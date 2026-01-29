@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import ParticleBackground from './About'
-import SpriteController from './Projects'
+import Carousel from './Projects'
 
 function WelcomeText() {
   return (
@@ -107,7 +107,7 @@ function App() {
                 </>
               ) : section.title === "Projects" ? (
                  <>
-                  
+                  <Carousel/>
                   <div>
                     <h2 className='title'>Projects</h2>
                   </div>
