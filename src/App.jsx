@@ -107,7 +107,7 @@ function App() {
                 </>
               ) : section.title === "Projects" ? (
                  <>
-                  <SpriteController />
+                  
                   <div>
                     <h2 className='title'>Projects</h2>
                   </div>
