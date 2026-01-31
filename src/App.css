@@ -103,12 +103,37 @@ body {
 }
 
 .projects {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 40px;
+  position: sticky;
+  display: grid;
+  top: 0;
+  grid-template-rows: 1fr 2fr;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
 }
 
+.projects-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-wrapper {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
 
 /* Background: very dark, almost black (#121212 or #242424)
 Accent / buttons / links: bright blue (#646cff like you already have)

@@ -107,9 +107,12 @@ function App() {
                 </>
               ) : section.title === "Projects" ? (
                  <>
-                  <Carousel/>
-                  <div>
-                    <h2 className='title'>Projects</h2>
+                  <div className="projects-title">
+                    <h2 className="title">Projects</h2>
+                  </div>
+
+                  <div className="projects-carousel">
+                    <Carousel />
                   </div>
                 </>
               ) : (
