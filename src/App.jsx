@@ -106,7 +106,7 @@ function App() {
                   </div>
                 </>
               ) : section.title === "Projects" ? (
-                 <>
+                 <div className="projects">
                   <div className="projects-title">
                     <h2 className="title">Projects</h2>
                   </div>
@@ -114,7 +114,7 @@ function App() {
                   <div className="projects-carousel">
                     <Carousel />
                   </div>
-                </>
+                </div>
               ) : (
                 <h2 className="title">{section.title}</h2>
               )}
