@@ -38,7 +38,11 @@
 
 .header {
     font-family: 'Comfortaa', cursive;
-    font-size: x-large;
+    font-size: 40px;
+    font-weight: 999;
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
 }
 
 .arrow {
@@ -51,12 +55,12 @@
 
 .project-image {
     max-width: 80%;
-    height: 200px;
+    height: 350px;
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px;
     pointer-events: none;
     position: relative;
-    top: -50px
+    top: -50px;
+    gap: -50px;
 }
