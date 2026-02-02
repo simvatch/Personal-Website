@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+# Personal Website
 
 A personal portfolio website built with **React (JavaScript)** and powered by **Vite**.  
 It showcases who I am, the projects I’ve worked on, and provides a simple way for people to contact me. The site also includes a few additional sections that reflect my interests and personality.
