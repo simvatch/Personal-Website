@@ -78,9 +78,11 @@ export default function Carousel() {
         >
           {extendedProjects.map((p, i) => (
             <div className="slide" key={i}>
-                <img className="project-image" src={p.image}/>
+                <div className="project-image-wrapper">
+                  <img className="project-image" src={p.image} />
+                </div>
                 <h3 className="header">{p.title}</h3>
-                <p1 className="description">{p.description}</p1>
+                <p className="description">{p.description}</p>
             </div>
           ))}
         </div>

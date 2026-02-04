@@ -105,8 +105,7 @@ body {
 
 .projects {
   position: sticky;
-  display: grid;
-  grid-template-rows: 1fr 2fr;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -121,7 +120,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 5;
-  margin-bottom: -30px;
+  margin-bottom: -80px;
 }
 
 .projects-carousel {
