@@ -41,8 +41,9 @@
     font-size: 40px;
     font-weight: 999;
     display: flex;
-    margin-top: auto;
+    margin-top: -25px;
     justify-content: center;
+    transform: translateY(-8px);
 }
 
 .arrow {
@@ -55,7 +56,7 @@
 
 .project-image {
     max-width: 80%;
-    height: 350px;
+    height: 300px;
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -63,4 +64,14 @@
     position: relative;
     top: -50px;
     gap: -50px;
+}
+
+.description {
+    font-family: "Comfortaa", cursive;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-30px)
 }

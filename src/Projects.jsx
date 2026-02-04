@@ -8,10 +8,26 @@ import leftArrow from "./assets/left_arrow.png";
 import rightArrow from "./assets/right_arrow.png";
 
 const projects = [
-  { title: "Bones and Blades", image: actionshot },
-  { title: "TagIt", image: logo },
-  { title: "Mooody Weather", image: cow },
-  { title: "Jay", image: jay },
+  { 
+    title: "Bones and Blades",
+    image: actionshot, 
+    description: "A 2D action game built in Pygame featuring animated characters, combat mechanics and enemies. The game uses JSON to store player data and quest progress." 
+  },
+  {  
+    title: "TagIt", 
+    image: logo, 
+    description: "A mobile app that helps recover lost items using QR Codes attached to belongings. When scanned, the owner receives an email and the finder can leave anonymous message about where the item was left. Users can manage multiple items and view the items' status through the app." 
+  },
+  { 
+    title: "Mooody Weather",
+    image: cow, 
+    description: "An interactive weather app where a cow reacts to real-time weather in a chosen city. The background and animations change depending on the condition like rain, sun or snow. It contains a simple backend with visual, playful frontend." 
+  },
+  { 
+    title: "Jay", 
+    image: jay, 
+    description: "A Python terminal based assistant that provides tools such as weather lookup, football score, drawing utilities, plant information and recipe database. It acts as a multi-purpose command line helper with different built-in features." 
+  },
 ];
 
 const extendedProjects = [
@@ -64,6 +80,7 @@ export default function Carousel() {
             <div className="slide" key={i}>
                 <img className="project-image" src={p.image}/>
                 <h3 className="header">{p.title}</h3>
+                <p1 className="description">{p.description}</p1>
             </div>
           ))}
         </div>
