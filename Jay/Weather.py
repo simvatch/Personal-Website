@@ -5,10 +5,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_weather(location):
+    if not location:
+        return "Please specify a city for the weather."
+
     api_key = os.getenv("weather_api").strip()
-    result = requests.get(
-        f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric"
-    )
+    result = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric")
     
     data = result.json()
     

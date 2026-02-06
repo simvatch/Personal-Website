@@ -14,6 +14,8 @@ def jay_execute(command: str):
     if any(keyword in command for keyword in ["weather", "forecast", "temperature", "rain", "sunny", "cloudy"]):
         match = re.search(r"(?:in|of|at|location(?: of)?)\s+(.+)", command)
         location = re.sub(r"[^a-zA-Z\s]", "", match.group(1).strip()) if match else None
+        if not location: 
+            return "Please specify a city for the weather."
         return get_weather(location)
 
     # elif "square" in command and ("draw" in command or "make" in command or "create" in command):
@@ -146,6 +148,9 @@ def jay_execute(command: str):
 
     elif any(keyword in command for keyword in ["exit", "quit", "stop", "bye", "goodbye"]):
         return "exit"
+
+    elif any(keyword in command for keyword in ["hello", "hi", "hey", "greetings"]):
+        return "Hello Simona! How can I assist you today?"
 
     else:
         return "I'm sorry Simona, I can't do that or I don't understand it yet."
