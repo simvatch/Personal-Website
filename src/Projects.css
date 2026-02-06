@@ -131,3 +131,157 @@
     text-align: center;
     transform: translateY(-30px)
 }
+
+.project-title {
+    color: #fff;
+    font-size: 5rem;
+    font-family: "Indie Flower", cursive;
+    -webkit-text-stroke: 1px #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center; 
+    width: 100vw;   
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: #121212;
+    min-height: 100vh;
+}
+
+.game-inner {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto; 
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    gap: 30px;
+}
+
+.download-button {
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3a3f5c, #2b2f42);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3 ease;
+}
+
+.download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #4a4f6c, #3b3f53);
+    color: white;
+}
+
+.video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container video{
+    width: 400px;
+    max-width: 90vw;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transform: perspective(1000px) rotateX(2deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow 0.5s ease;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #aaa;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.github-link:hover {
+    color: white;
+}
+
+.home-button {
+    position: absolute;
+    top: 30px; 
+    left: 30px; 
+    width: 70px;  
+    height: 70px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-color: #242532;
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.home-button:hover {
+    background-color: #33344a;
+    transform: scale(1.15); 
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
+    color: #4fc3f7; 
+}
+
+.console {
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: monospace;
+  padding: 15px;
+  height: 300px;
+  width: 100%;
+  overflow-y: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.console-user {
+  color: #6fcf97;
+}
+
+.console-jay {
+  color: #56ccf2;
+}
+
+.console-input { 
+  width: calc(100% - 80px);
+  padding: 8px;
+  font-family: monospace;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  font-family: monospace;
+  font-size: 14px;
+  cursor: pointer;
+}

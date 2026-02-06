@@ -1,6 +1,6 @@
 import React from "react";
 import { FiDownload, FiGithub, FiHome } from "react-icons/fi";
-import "./BonesAndBlades.css"
+import "../Projects.css"
 
 export default function BonesAndBlades(){
     return (

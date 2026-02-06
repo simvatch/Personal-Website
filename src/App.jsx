@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import BonesAndBlades from "./Projects/BonesAndBlades"
+import Jay from "./Projects/Jay"
 import ParticleBackground from './About'
 import Carousel from './Projects'
 
@@ -132,6 +133,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bones-and-blades" element={<BonesAndBlades />} />
+        <Route path="/jay" element={<Jay />} />
       </Routes>
     </BrowserRouter>
   )
