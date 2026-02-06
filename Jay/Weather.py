@@ -25,18 +25,15 @@ def get_weather(location):
     if data.get("cod") == "404":
         return f"City '{location}' not found. Please check the location."
 
-    description = data["weather"][0]["description"].capitalize()
+    description = data["weather"][0]["description"]
     feels_like = round(data["main"]["feels_like"])
     temp_max = round(data["main"]["temp_max"])
     temp_min = round(data["main"]["temp_min"])
-    city = location.capitalize()
+    city = location[0].upper() + location[1:]
 
     weather_text = (
-        f"Weather in {city}:\n"
-        f"- Description: {description}\n"
-        f"- Feels like: {feels_like}°C\n"
-        f"- High: {temp_max}°C\n"
-        f"- Low: {temp_min}°C"
+        f"There is {description} in {city}. "
+        f"It feels like {feels_like}°C with a high of {temp_max}°C and a low of {temp_min}°C."
     )
 
     return weather_text
