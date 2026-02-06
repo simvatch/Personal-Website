@@ -1,12 +1,12 @@
 import re
-from Weather import get_weather
-from Numbers import *
-from Time import *
-from Translator import translate
-from Leagues import *
-from Cooking import cooking
-from Gardening import gardening
-from Paint import *
+from .Weather import get_weather
+from .Numbers import *
+from .Time import *
+from .Translator import translate
+from .Leagues import *
+from .Cooking import cooking
+from .Gardening import gardening
+from .Paint import *
 
 def jay_execute(command: str):
     command = command.lower()
