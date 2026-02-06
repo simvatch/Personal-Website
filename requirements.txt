@@ -1,4 +1,6 @@
 gunicorn
+fastapi
+uvicorn
 requests
 googletrans
-dotenv
+python-dotenv
