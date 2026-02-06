@@ -16,22 +16,22 @@ def jay_execute(command: str):
         location = re.sub(r"[^a-zA-Z\s]", "", match.group(1).strip()) if match else None
         return get_weather(location)
 
-    elif "square" in command and ("draw" in command or "make" in command or "create" in command):
-        return draw_square()
-    elif "triangle" in command:
-        return draw_triangle()
-    elif "circle" in command:
-        return draw_circle()
-    elif "pentagon" in command:
-        return draw_pentagon()
-    elif "hexagon" in command:
-        return draw_hexagon()
-    elif "octagon" in command:
-        return draw_octagon()
-    elif "star" in command:
-        return draw_star()
-    elif "paint" in command or "draw" in command or "drawing" in command:
-        return paint()
+    # elif "square" in command and ("draw" in command or "make" in command or "create" in command):
+    #     return draw_square()
+    # elif "triangle" in command:
+    #     return draw_triangle()
+    # elif "circle" in command:
+    #     return draw_circle()
+    # elif "pentagon" in command:
+    #     return draw_pentagon()
+    # elif "hexagon" in command:
+    #     return draw_hexagon()
+    # elif "octagon" in command:
+    #     return draw_octagon()
+    # elif "star" in command:
+    #     return draw_star()
+    # elif "paint" in command or "draw" in command or "drawing" in command:
+    #     return paint()
 
     elif "random" in command:
         numbers = [int(n) for n in re.findall(r'\d+', command)]
