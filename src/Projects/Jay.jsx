@@ -41,6 +41,8 @@ export default function Jay(){
             <div className="game-inner">
                 <h1 className="project-title">Jay</h1>
 
+                <p className="info">This is a demo version so full functionality is not available</p>
+
                 <div className="console">
                     {output.map((line, idx) => (
                         <div key={idx} className={line.type === "user" ? "console-user" : "console-jay"}>
@@ -48,6 +50,8 @@ export default function Jay(){
                             {line.text}
                         </div>
                     ))}
+                    <div className="console-prompt">&gt;</div>
+
                     <div ref={bottomRef}/>
                 </div>
 

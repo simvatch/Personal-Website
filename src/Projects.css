@@ -262,6 +262,14 @@
   margin-bottom: 10px;
   text-align: left;
   scroll-behavior: smooth;
+  white-space: pre-wrap;
+}
+
+.info {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
 
 .console-user {
@@ -270,6 +278,12 @@
 
 .console-jay {
   color: #56ccf2;
+}
+
+.console-prompt {
+    color: #6fcf97;
+    font-weight: bold;
+    margin-top: 4px;
 }
 
 .console-input { 
