@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FiDownload, FiGithub, FiHome } from "react-icons/fi";
 import "../Projects.css"
 
@@ -6,6 +6,8 @@ export default function Jay(){
 
     const [input, setInput] = useState("");
     const [output, setOutput] = useState([]);
+
+    const bottomRef = useRef(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,6 +32,10 @@ export default function Jay(){
         setInput("");
     };
 
+    useEffect(() => {
+        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [output])
+
     return (
         <div className="game-page">
             <div className="game-inner">
@@ -42,6 +48,7 @@ export default function Jay(){
                             {line.text}
                         </div>
                     ))}
+                    <div ref={bottomRef}/>
                 </div>
 
                 <form onSubmit={handleSubmit}>
