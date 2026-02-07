@@ -17,6 +17,7 @@ class CommandRequest(BaseModel):
     command: str
 
 @app.get("/")
+@app.head("/")
 def read_root():
     return {"message": "Jay API is running!"}
 

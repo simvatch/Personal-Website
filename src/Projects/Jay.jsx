@@ -54,6 +54,11 @@ export default function Jay(){
                     />
                 </form>
 
+                <a href="/jay.zip" className="download-button" download>
+                <FiDownload style={{ marginRight: "8px" }} />
+                Download For Full Functionality
+                </a>
+
                 <a
                 href="https://github.com/palebrownbutton/Jay"
                 className="github-link"
