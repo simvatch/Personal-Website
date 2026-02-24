@@ -71,7 +71,7 @@ export default function Jay(){
                 </a>
 
                 <a
-                href="https://github.com/palebrownbutton/Jay"
+                href="https://github.com/simvatch/Jay"
                 className="github-link"
                 target="_blank"
                 rel="noopener noreferrer"

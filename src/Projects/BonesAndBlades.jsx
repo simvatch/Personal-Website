@@ -25,7 +25,7 @@ export default function BonesAndBlades(){
                 </a>
 
                 <a
-                href="https://github.com/palebrownbutton/Bones-and-Blades"
+                href="https://github.com/simvatch/Bones-and-Blades"
                 className="github-link"
                 target="_blank"
                 rel="noopener noreferrer"
