@@ -339,3 +339,35 @@ button {
 .weather-page .info {
     margin-bottom: 5px;
 }
+
+.game-page.tagit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+}
+
+.tagit-title {
+    margin-top: 50px; 
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.tagit-center-container {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    width: 100%;
+    transform: none; 
+}
+
+.tagit-info {
+    font-size: 2rem;
+    color: #ffffff;
+    opacity: 0.6;
+    font-family: 'Comfortaa', cursive;
+}

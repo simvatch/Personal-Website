@@ -6,6 +6,7 @@ import Jay from "./Projects/Jay"
 import MooodyWeather from './Projects/MooodyWeather'
 import ParticleBackground from './About'
 import Carousel from './Projects'
+import TagIt from './Projects/TagIt'
 
 function WelcomeText() {
   return (
@@ -172,6 +173,7 @@ function App() {
         <Route path="/bones-and-blades" element={<BonesAndBlades />} />
         <Route path="/jay" element={<Jay />} />
         <Route path="/mooody-weather" element={<MooodyWeather/>} />
+        <Route path="/tagit" element={<TagIt />} />
       </Routes>
     </BrowserRouter>
   )
