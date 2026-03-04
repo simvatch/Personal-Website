@@ -9,7 +9,7 @@
 }
 
 .contact-center {
-    z-index: 20;
+    z-index: 30;
     position: absolute;
     width: 130px;
     height: 130px;
@@ -65,11 +65,17 @@
 
 .contact-line {
     position: absolute;
-    height: 0;
-    border-top: 2px dotted #bc6c25;
-    transform-origin: left center;
-    z-index: -1;
-    transition: opacity 0.4s ease;
+    left: 50%; 
+    top: 50%; 
+    height: 2px;
+    background: #bc6c25;
+    transform-origin: left center; 
+    z-index: 10;
+    background-image: linear-gradient(to right, #bc6c25 50%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    background-color: transparent;
 }
 
 .node-wrapper {
@@ -80,4 +86,10 @@
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     pointer-events: none;
     z-index: 10;
+}
+
+.node-icon-img {
+    width: 32px;
+    height: 32px;
+    filter: grayscale(1) contrast(1.2);
 }

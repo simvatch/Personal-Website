@@ -1,4 +1,5 @@
 import { useState } from "react";
+import itchLogo from "./assets/itchio-logo.svg"
 import "./Contact.css";
 
 const BrandIcon = ({ path }) => (
@@ -24,11 +25,7 @@ export default function Contact() {
         { 
             name: "itch.io", 
             url: "https://palebrownbutton.itch.io/", 
-            icon: (
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                    <path d="M12 2C9.5 2 7.6 3.2 6.3 5.1 4.6 4.8 3 6 3 7.8c0 1.3.7 2.4 1.8 3C4.3 11.6 4 12.5 4 13.4c0 1.7 1.3 3.1 3 3.1h.4c.6 2.1 2.6 3.5 4.6 3.5s4-1.4 4.6-3.5h.4c1.7 0 3-1.4 3-3.1 0-.9-.3-1.8-.8-2.6 1.1-.6 1.8-1.7 1.8-3 0-1.8-1.6-3-3.3-2.7C16.4 3.2 14.5 2 12 2zm-2 8.5a1 1 0 110-2 1 1 0 010 2zm4 0a1 1 0 110-2 1 1 0 010 2z"/>
-                </svg>
-            )
+            asset: itchLogo
         },
         { 
             name: "Email", 
@@ -75,7 +72,11 @@ export default function Contact() {
                                 className="contact-node"
                                 aria-label={link.name}
                             >
-                                {link.icon ? link.icon : <BrandIcon path={link.path} />}
+                                {link.asset ? (
+                                    <img src={link.asset} alt={link.name} className="node-icon-img" />
+                                ) : (
+                                    <BrandIcon path={link.path} />
+                                )}
                             </a>
                         </div>
                     </div>
