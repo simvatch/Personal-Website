@@ -45,7 +45,7 @@ export default function Contact() {
 
             {links.map((link, index) => {
                 const angle = (index / links.length) * (2 * Math.PI) - Math.PI / 2;
-                const radius = open ? 140 : 0;
+                const radius = open ? Math.min(window.innerWidth * 0.32, 300) : 0;
                 const x = Math.cos(angle) * radius;
                 const y = Math.sin(angle) * radius;
 

@@ -122,7 +122,6 @@ function Home() {
                 </div>
               ) : section.title == "Contact" ? (
                 <div className='contact-wrapper'>
-                  <h2 className='title'>Contact</h2>
                   <Contact />
                 </div>
               ) : (

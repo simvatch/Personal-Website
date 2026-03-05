@@ -1,26 +1,29 @@
 .contact-container { 
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 90vw;
+    height: 90vh;
+    max-width: 800px;
+    max-height: 800px;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
 }
 
 .contact-center {
     z-index: 30;
     position: absolute;
-    width: 130px;
-    height: 130px;
+    width: clamp(200px, 35vw, 320px);
+    height: clamp(200px, 35vw, 320px);
     border-radius: 50%;
     background: #252522;
-    border: 3px solid #bc6c25;
+    border: 4px solid #bc6c25; 
     font-family: "Indie Flower", cursive;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
+    font-size: clamp(36px, 6vw, 64px);
     font-weight: bold;
     color: #fefae0;
     cursor: pointer;
@@ -39,8 +42,8 @@
 
 .contact-node {
     position: absolute;
-    width: 65px;
-    height: 65px;
+    width: clamp(65px, 11vw, 100px);
+    height: clamp(65px, 11vw, 100px);
     border-radius: 50%;
     background: #fefae0;
     display: flex;
@@ -65,17 +68,11 @@
 
 .contact-line {
     position: absolute;
-    left: 50%; 
-    top: 50%; 
-    height: 2px;
-    background: #bc6c25;
-    transform-origin: left center; 
-    z-index: 10;
-    background-image: linear-gradient(to right, #bc6c25 50%, rgba(255,255,255,0) 0%);
-    background-position: bottom;
-    background-size: 8px 1px;
-    background-repeat: repeat-x;
-    background-color: transparent;
+    height: 0;
+    border-top: 2px dotted #bc6c25;
+    transform-origin: left center;
+    z-index: -1;
+    transition: opacity 0.4s ease;
 }
 
 .node-wrapper {
@@ -89,7 +86,7 @@
 }
 
 .node-icon-img {
-    width: 32px;
-    height: 32px;
+    width: 50%;
+    height: auto;
     filter: grayscale(1) contrast(1.2);
 }
