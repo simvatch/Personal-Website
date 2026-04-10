@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useLayoutEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import BonesAndBlades from "./Projects/BonesAndBlades"
 import Jay from "./Projects/Jay"
@@ -84,6 +84,12 @@ const sections = [
 ];
 
 function Home() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }, [])
+
   return (
     <main>
       <section className='section hero' style={{ backgroundColor: "#121212" }}>
@@ -92,7 +98,11 @@ function Home() {
       </section>
 
       {sections.map((section, idx) => (
-        <section key={idx} className={`section sticky ${section.className}`} style={{ backgroundColor: section.color, zIndex: sections.length + idx, "--i": idx }} >
+        <section
+          key={idx}
+          className={`section stack-section ${section.className}`}
+          style={{ backgroundColor: section.color, zIndex: idx + 1 }}
+        >
              {section.title === "About" ? (
                 <>
                   <ParticleBackground count={300} />
@@ -133,45 +143,9 @@ function Home() {
   )
 }
 
-function ScrollRestoration() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-  }, []);
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      const savedY = sessionStorage.getItem("homeScrollY");
-      
-      if (savedY) {
-        setTimeout(() => {
-          window.scrollTo({
-            top: Number(savedY),
-            behavior: "auto"
-          });
-        }, 50); 
-      }
-    }
-    const handleScroll = () => {
-      if (location.pathname === "/") {
-        sessionStorage.setItem("homeScrollY", String(window.scrollY));
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [location.pathname]);
-
-  return null;
-}
-
 function App() {
   return (
     <BrowserRouter>
-      <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bones-and-blades" element={<BonesAndBlades />} />
@@ -182,4 +156,4 @@ function App() {
     </BrowserRouter>
   )
 }
-export default App; ScrollRestoration
+export default App
