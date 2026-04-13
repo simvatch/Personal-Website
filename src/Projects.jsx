@@ -12,25 +12,25 @@ const projects = [
   { 
     title: "Bones and Blades",
     image: actionshot, 
-    description: "A 2D action game built in Pygame featuring animated characters, combat mechanics and enemies. The game uses JSON to store player data and quest progress.", 
+    description: "A 2D action game developed using Pygame, featuring animation, combat systems and enemy behaviour. The game includes real-time input handling, sprite-based animation and collision-driven combat mechanics. Player progression is managed through structured JSON data, enabling persistent storage of stats and quest progression. The project demonstrates a solid understanding of game loops, state management, and data-driven design.", 
     path: "/bones-and-blades"
   },
   {  
     title: "TagIt", 
     image: logo, 
-    description: "A mobile app that helps recover lost items using QR Codes attached to belongings. When scanned, the owner receives an email and the finder can leave an anonymous message about where the item was left. Users can manage multiple items and view the items' status through the app.", 
+    description: "A mobile app that helps recover lost items using QR Codes attached to belongings. When scanned, the owner receives an email and the finder can leave an anonymous message about where the item was left. Users can manage multiple items and view the items' status through the app. POC focused on tagging school uniforms.", 
     path: "/tagit"
   },
   { 
     title: "Mooody Weather",
     image: cow, 
-    description: "An interactive weather app where a cow reacts to real-time weather in a chosen city. The background and animations change depending on the condition like rain, sun or snow. It contains a simple backend with visual, playful frontend.", 
+    description: "An interactive weather app built with a React Native frontend and a Python backend which displays real-time weather data through a dynamic, character-based UI. A custom character reacts to conditions in a selected city, with backgrounds that adapt to weather states. This project demonstrates early experience with React Native.", 
     path: "/mooody-weather"
   },
   { 
     title: "Jay", 
     image: jay, 
-    description: "A Python terminal based assistant that provides tools such as weather lookup, football scores, drawing utilities, plant information and recipes. It acts as a multi-purpose command line helper with different built-in features.", 
+    description: "A Python terminal based assistant built as an early project exploring API integration. It provides tools such as weather lookup, football scores, drawing utilities, plant information and recipes. It acts as a multi-purpose command line helper with different built-in features using external data sources.", 
     path: "/jay"
   },
 ];

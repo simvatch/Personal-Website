@@ -111,10 +111,11 @@ function Home() {
                   </div>
                   <div className="about-right">
                     <p className="paragraph">
-                      I’m a 15 year old Bulgarian developer based in London, mainly
-                      focused on backend development in Python. I’ve built apps in
-                      React Native, developed games with Godot, used Pygame in Python
-                      and created web projects using React and CSS. Outside of coding,
+                      I’m a 15 year old British Bulgarian developer based in London, with a strong
+                      focus on backend development in Python. I’ve built apps in
+                      React Native, developed games with Godot, used Pygame in Python,
+                      created web projects using React and CSS. Lately, I have been
+                      experimenting with AI capabilities. Outside of tech,
                       I’m a competitive rower, a commitment that has taught me
                       discipline, teamwork and resilience.
                     </p>
