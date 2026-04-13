@@ -61,7 +61,7 @@
 
 .contact-node:hover {
     transform: translate(var(--x), var(--y)) scale(1.15);
-    box-shadow: 0 0 20px rgba(37, 171, 232, 0.6);
+    box-shadow: 0 0 20px rgb(41, 182, 246);
     z-index: 10;
 }
 
@@ -84,8 +84,12 @@
     z-index: 10;
 }
 
-.node-icon-img {
+.contact-node svg {
     width: 50%;
-    height: auto;
-    filter: grayscale(1) contrast(1.2);
+    height: 50%;
+    transition: transform 0.2s ease;
+}
+
+.contact-node:hover svg {
+    transform: scale(1.1);
 }
