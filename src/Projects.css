@@ -383,28 +383,26 @@ button {
 
 @media (max-width: 768px) {
     .project-image-wrapper {
-        width: fit-content;
-        max-width: 100%;
+        width: 85%; 
+        max-width: 400px;
         height: auto;
+        margin: 0 auto; 
+        padding: 3px; 
     }
 
-    .project-image-wrapper a {
-        display: block;
-        max-width: 100%;
+    .project-image-wrapper::before {
+        width: 200%;
+        height: 200%;
     }
 
     .project-image {
         width: 100%;
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
+        height: auto; 
+        display: block;
+        border-radius: 10px;
     }
 
-    .header {
-        margin-top: 26px;
-    }
-
-    .description {
-        margin-top: 16px;
+    .project-title {
+        font-size: 3rem;
     }
 }
