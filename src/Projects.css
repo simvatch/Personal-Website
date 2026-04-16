@@ -382,75 +382,86 @@ button {
 }
 
 @media (max-width: 768px) {
+    /* 1. Reset the layout containers */
+    .viewport {
+        height: auto !important; /* Force override of the 700px desktop height */
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 20px 0;
+    }
+
+    .slide {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    /* 2. Fix the Laser Beam (The "Glow") */
     .project-image-wrapper {
-        overflow: visible; 
-        width: 70%;   
-        max-width: 250px;
+        width: 250px; /* Use a fixed width on mobile for better centering */
+        height: 180px; /* Reduced height for mobile */
+        overflow: visible !important;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .project-image-wrapper::before {
-        opacity: 1;      
-        width: 140%;   
-        height: 140%;
-        top: -20%;
-        left: -20%;
+        opacity: 1 !important; /* Force laser to show */
+        width: 180%; /* Make it large enough to see past the edges */
+        height: 180%;
+        top: -40%;
+        left: -40%;
+        animation: rotate-beam 2s linear infinite;
+    }
+
+    .project-image-wrapper::after {
+        inset: 2px; 
+        background: #121212; 
     }
 
     .project-image {
+        height: 100%;
         width: 100%;
-        height: auto; 
-        display: block;
-        object-fit: contain;
-        border-radius: 10px;
-    }
-
-    .arrow {
-        transform: translateY(0);
-        margin: 0 5px;
-        width: 40px; 
-        opacity: 1;
-    }
-
-    .carousel {
-        gap: 10px; 
-    }
-
-    .carousel button {
-        height: auto; 
-        align-self: center;
+        object-fit: cover;
     }
 
     .project-title {
-        font-size: 2.2rem;
-        margin-bottom: 10px;
-        line-height: 1.1;
-    }
-
-    .description {
-        font-size: 16px; 
-        padding: 0 15px;
-        margin-top: 8px;
-    }
-
-    .viewport {
-        height: auto;      
-        min-height: 100vh; 
-        padding: 40px 0;
-    }
-
-    .description {
-        font-size: 14px;  
-        line-height: 1.4;
-        padding: 0 20px; 
-        width: 90%;
-    }
-
-    .info {
-        font-size: 0.85rem;
+        font-size: 2rem !important;
+        width: 100%;
         padding: 0 10px;
+        box-sizing: border-box;
     }
-    
-    .header {
-        font-size: 28px; 
+
+    .description, .info {
+        font-size: 14px;
+        width: 100%;
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        padding: 0 15px;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+        justify-content: space-between; 
+        padding: 0 10px;
+        gap: 0;
+        margin-top: 10px;
+    }
+
+    .carousel button {
+        height: 50px; 
+        width: 50px;
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: 100;
+    }
+
+    .arrow {
+        opacity: 1 !important;
+        transform: none !important; 
     }
 }
