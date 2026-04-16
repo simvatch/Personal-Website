@@ -397,6 +397,11 @@ button {
 
     .project-image-wrapper {
         top: 0;
+        width: min(100%, 560px);
+    }
+
+    .project-image-wrapper a {
+        display: block;
         width: 100%;
     }
 
@@ -418,10 +423,11 @@ button {
     .project-image {
         height: auto;
         aspect-ratio: 16 / 9;
+        width: 100%;
     }
 
     .slide {
-        padding: 0 8px;
+        padding: 0 12px;
         box-sizing: border-box;
     }
 }
@@ -443,5 +449,9 @@ button {
     .description {
         font-size: 14px;
         padding: 0 0.25rem;
+    }
+
+    .project-image-wrapper {
+        width: min(100%, 92vw);
     }
 }
