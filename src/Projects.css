@@ -384,12 +384,20 @@ button {
 @media (max-width: 768px) {
     .project-image-wrapper {
         width: 80%; 
-        max-width: 320px; 
+        max-width: 280px;
         height: auto; 
-        margin: 0 auto;
+        margin: 20px auto;
         padding: 3px; 
         display: flex;
         overflow: visible; 
+        aspect-ratio: auto; 
+    }
+
+    .project-image-wrapper::before {
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
     }
 
     .project-image {
@@ -400,11 +408,31 @@ button {
         border-radius: 10px;
     }
 
-    .project-image-wrapper::after {
-        inset: 3px; 
+    .arrow {
+        transform: translateY(0); 
+        margin: 0 10px;
+    }
+
+    .carousel button {
+        height: auto; 
+        align-self: center;
     }
 
     .project-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        line-height: 1.1;
+    }
+
+    .description {
+        font-size: 16px; 
+        padding: 0 15px;
+        margin-top: 8px;
+    }
+
+    .viewport {
+        height: auto; 
+        min-height: 500px;
+        padding: 20px 0;
     }
 }
