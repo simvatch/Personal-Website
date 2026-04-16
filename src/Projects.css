@@ -380,3 +380,17 @@ button {
     opacity: 0.6;
     font-family: 'Comfortaa', cursive;
 }
+
+@media (max-width: 768px) {
+    .slide-content {
+        justify-content: flex-start;
+    }
+
+    .header {
+        margin-top: 28px;
+    }
+
+    .description {
+        margin-top: 16px;
+    }
+}
