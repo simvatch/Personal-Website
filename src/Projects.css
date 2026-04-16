@@ -376,7 +376,7 @@ button {
 @media (max-width: 768px) {
     .carousel {
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-columns: 52px minmax(0, 1fr) 52px;
         width: 100%;
         align-self: center;
         justify-content: stretch;
@@ -393,6 +393,10 @@ button {
         grid-column: 2;
     }
 
+    .track {
+        width: 100%;
+    }
+
     .carousel button {
         height: auto;
         padding: 0 0.25rem;
@@ -407,7 +411,8 @@ button {
 
     .project-image-wrapper {
         top: 0;
-        width: min(100%, 560px);
+        width: 100%;
+        max-width: 100%;
     }
 
     .project-image-wrapper a {
@@ -434,16 +439,26 @@ button {
         height: auto;
         aspect-ratio: 16 / 9;
         width: 100%;
+        max-width: 100%;
     }
 
     .slide {
+        width: 100%;
+        max-width: 100%;
         padding: 0 12px;
         box-sizing: border-box;
+    }
+
+    .header,
+    .description {
+        max-width: 100%;
+        word-break: break-word;
     }
 }
 
 @media (max-width: 480px) {
     .carousel {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
         gap: 8px;
     }
 
@@ -459,9 +474,5 @@ button {
     .description {
         font-size: 14px;
         padding: 0 0.25rem;
-    }
-
-    .project-image-wrapper {
-        width: min(100%, 92vw);
     }
 }
