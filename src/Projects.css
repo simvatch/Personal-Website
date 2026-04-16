@@ -46,9 +46,8 @@
     font-size: 40px;
     font-weight: 999;
     display: flex;
-    margin-top: -25px;
+    margin-top: 0;
     justify-content: center;
-    transform: translateY(-8px);
 }
 
 .arrow {
@@ -63,24 +62,22 @@
 
 .project-image-wrapper {
   position: relative;
+  width: fit-content; 
+  height: 300px;   
+  border-radius: 12px;
+  overflow: hidden;  
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
-  padding: 3px;      
-  overflow: hidden;
-  isolation: isolate;
-  top: -60px;
-  cursor: pointer;
+  padding: 3px;  
+  margin: 0 auto;
 }
 
 .project-image-wrapper::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  width: 150%;
+  height: 150%;
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
@@ -90,7 +87,8 @@
   );
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: -1;
+  z-index: 0; 
+  animation: rotate-beam 2s linear infinite;
 }
 
 .project-image-wrapper:hover::before {
@@ -102,10 +100,10 @@
 .project-image-wrapper::after {
   content: "";
   position: absolute;
-  inset: 3px; 
-  background: transparent; 
+  inset: 4px; 
+  background: #121212;
   border-radius: 12px;
-  z-index: -1;
+  z-index: 1; 
 }
 
 .project-image {
@@ -115,7 +113,7 @@
   object-fit: cover; 
   border-radius: 12px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 @keyframes rotate-beam {
@@ -349,6 +347,14 @@ button {
     height: 100vh;
     padding: 0;
     overflow: hidden;
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
 }
 
 .tagit-title {
