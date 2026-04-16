@@ -382,10 +382,9 @@ button {
 }
 
 @media (max-width: 768px) {
-    /* 1. Reset the layout containers */
     .viewport {
-        height: auto !important; /* Force override of the 700px desktop height */
-        min-height: 100vh;
+        height: auto !important;
+        min-height: 0;
         overflow-x: hidden;
         padding: 20px 0;
     }
@@ -395,73 +394,86 @@ button {
         padding-bottom: 40px;
     }
 
-    /* 2. Fix the Laser Beam (The "Glow") */
-    .project-image-wrapper {
-        width: 250px; /* Use a fixed width on mobile for better centering */
-        height: 180px; /* Reduced height for mobile */
-        overflow: visible !important;
-        margin: 20px auto;
-        display: flex;
-        justify-content: center;
+    .carousel {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0;
+        width: 100%;
         align-items: center;
     }
 
+    .carousel button {
+        height: 44px;
+        width: 44px;
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel .arrow-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 32px;
+        width: 100%;
+    }
+
+    .arrow {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .project-image-wrapper {
+        width: 260px;
+        height: 185px;
+        overflow: visible !important;  
+        margin: 20px auto;
+        padding: 3px;
+    }
+
     .project-image-wrapper::before {
-        opacity: 1 !important; /* Force laser to show */
-        width: 180%; /* Make it large enough to see past the edges */
-        height: 180%;
-        top: -40%;
-        left: -40%;
+        opacity: 1 !important;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
         animation: rotate-beam 2s linear infinite;
+        filter: blur(6px);
     }
 
     .project-image-wrapper::after {
-        inset: 2px; 
-        background: #121212; 
+        inset: 3px;
+        background: #121212;
+        border-radius: 12px;
     }
 
     .project-image {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        border-radius: 10px;
     }
 
     .project-title {
-        font-size: 2rem !important;
-        width: 100%;
-        padding: 0 10px;
+        font-size: 2.2rem !important;
+        padding: 0 12px;
         box-sizing: border-box;
     }
 
-    .description, .info {
+    .description,
+    .info {
         font-size: 14px;
-        width: 100%;
         max-width: 90vw;
         margin-left: auto;
         margin-right: auto;
-        box-sizing: border-box;
         padding: 0 15px;
+        box-sizing: border-box;
     }
 
-    .carousel {
-        position: relative;
-        width: 100%;
-        justify-content: space-between; 
-        padding: 0 10px;
-        gap: 0;
-        margin-top: 10px;
-    }
-
-    .carousel button {
-        height: 50px; 
-        width: 50px;
-        opacity: 1 !important;
-        visibility: visible !important;
-        z-index: 100;
-    }
-
-    .arrow {
-        opacity: 1 !important;
-        transform: none !important; 
+    .header {
+        font-size: 26px;
     }
 }
