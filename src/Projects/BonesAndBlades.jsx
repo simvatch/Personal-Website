@@ -19,7 +19,7 @@ export default function BonesAndBlades(){
                 />
                 </div>
 
-                <a href="/bones-andblades.zip" className="download-button" download>
+                <a href="/bones-and-blades.zip" className="download-button" download>
                 <FiDownload style={{ marginRight: "8px" }} />
                 Download Game
                 </a>
