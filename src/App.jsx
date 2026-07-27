@@ -10,6 +10,7 @@ import TagIt from './Projects/TagIt'
 import FridgeOrganiser from './Projects/FridgeOrganiser'
 import BeatBattle from './Projects/BeatBattle'
 import Contact from './Contact'
+import Seo from './Seo'
 
 function WelcomeText() {
   return (
@@ -174,6 +175,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <Seo />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bones-and-blades" element={<BonesAndBlades />} />
