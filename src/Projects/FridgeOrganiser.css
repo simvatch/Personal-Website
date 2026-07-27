@@ -1,0 +1,85 @@
+/* The Fridge Organiser page runs the whole app inline, so the page itself is
+   locked to the viewport: wider than the standard 900px project column and
+   exactly one screen tall. Any overflow scrolls inside the app frame instead
+   of scrolling the page. */
+
+.fridge-page {
+    height: 100vh;
+    min-height: 0;
+    max-height: 100vh;
+    overflow: hidden;
+    justify-content: flex-start;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.fridge-page .fridge-inner {
+    max-width: min(1600px, 94vw);
+    height: 100%;
+    gap: 10px;
+}
+
+.fridge-page .project-title {
+    font-size: 3rem;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.fridge-page .info {
+    max-width: 900px;
+    flex-shrink: 0;
+}
+
+.fridge-page .github-link {
+    flex-shrink: 0;
+}
+
+/* The app frame: takes the leftover height and scrolls its own content. */
+.fridge-page .fridge-app-root {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 2px solid #333;
+    border-radius: 16px;
+    background: #e0ffff;
+}
+
+/* The standalone app sized itself to the viewport; inside the frame it should
+   fill the frame instead, with tighter padding now that it is shorter. */
+.fridge-page .fridge-app-root .app {
+    min-height: 100%;
+    padding: 20px 24px;
+}
+
+/* .top-bar bleeds outward with negative margins to sit flush against the top
+   of the app. Those margins are hard-coded to the standalone app's 40px 20px
+   padding, so they have to be re-matched to the tighter padding above or the
+   bar is pulled outside the frame and clipped. */
+.fridge-page .fridge-app-root .top-bar {
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-top: -20px;
+    padding: 10px 24px;
+}
+
+.fridge-page .fridge-app-root .title {
+    font-size: 2.6em;
+    margin-bottom: 10px;
+}
+
+.fridge-page .fridge-app-root .login-container {
+    min-height: 100%;
+}
+
+@media (max-width: 900px) {
+    .fridge-page .project-title {
+        font-size: 2.2rem;
+    }
+
+    .fridge-page .fridge-app-root .title {
+        font-size: 2em;
+    }
+}

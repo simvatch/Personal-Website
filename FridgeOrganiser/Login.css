@@ -1,0 +1,119 @@
+/* Scoped copy of fridge-organiser Login.css — every selector is nested under
+   .fridge-app-root so it cannot leak into the rest of the site.
+   Generated from C:\Fridge Organiser\fridge-organiser\src\Login.css */
+
+.fridge-app-root .login-container {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    background: linear-gradient(135deg, #e0ffff, #baf2ef);
+    font-family: "Comic Relief", system-ui;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.fridge-app-root .login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 25, 95, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-top: 8px solid #00195f;
+    box-sizing: border-box;
+}
+
+.fridge-app-root .login-card h2 {
+    color: #00195f;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+.fridge-app-root .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.fridge-app-root .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.fridge-app-root .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00195f;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.fridge-app-root .input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #d1f3ff;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.fridge-app-root .input-group input:focus {
+    outline: none;
+    border-color: #00195f;
+}
+
+.fridge-app-root .login-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.fridge-app-root .login-error-text {
+    color: #d9534f;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: left;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+@keyframes fo-fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fridge-app-root .password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fridge-app-root .password-wrapper input {
+    padding-right: 45px;
+}
+
+.fridge-app-root .password-toggle-btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00195f;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.fridge-app-root .password-toggle-btn:hover {
+    opacity: 1;
+}
+
+.fridge-app-root .password-toggle-btn:focus {
+    outline: none;
+}

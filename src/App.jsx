@@ -7,6 +7,8 @@ import MooodyWeather from './Projects/MooodyWeather'
 import ParticleBackground from './About'
 import Carousel from './Projects'
 import TagIt from './Projects/TagIt'
+import FridgeOrganiser from './Projects/FridgeOrganiser'
+import BeatBattle from './Projects/BeatBattle'
 import Contact from './Contact'
 
 function WelcomeText() {
@@ -83,11 +85,42 @@ const sections = [
   { title: 'Contact', color: '#2b2b2b', className: 'contact' }
 ];
 
+// Where the user was on the home page when they opened a project, so returning
+// puts them back at the same section instead of at the top. Session-scoped, so
+// a brand new visit still starts at the hero.
+const HOME_SCROLL_KEY = 'homeScrollY'
+
 function Home() {
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
+    // The home button on each project page is a plain link, so coming back is a
+    // full page load. Take scroll handling off the browser to avoid it restoring
+    // a position of its own and fighting the one below.
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+
+    const saved = Number(sessionStorage.getItem(HOME_SCROLL_KEY))
+    const target = Number.isFinite(saved) && saved > 0 ? saved : 0
+
+    window.scrollTo(0, target)
+    document.documentElement.scrollTop = target
+    document.body.scrollTop = target
+
+    let frame = null
+    const rememberScroll = () => {
+      if (frame !== null) return
+      frame = requestAnimationFrame(() => {
+        frame = null
+        sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY))
+      })
+    }
+
+    window.addEventListener('scroll', rememberScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', rememberScroll)
+      if (frame !== null) cancelAnimationFrame(frame)
+    }
   }, [])
 
   return (
@@ -153,6 +186,8 @@ function App() {
         <Route path="/jay" element={<Jay />} />
         <Route path="/mooody-weather" element={<MooodyWeather/>} />
         <Route path="/tagit" element={<TagIt />} />
+        <Route path="/fridge-organiser" element={<FridgeOrganiser />} />
+        <Route path="/beat-battle" element={<BeatBattle />} />
       </Routes>
     </BrowserRouter>
   )

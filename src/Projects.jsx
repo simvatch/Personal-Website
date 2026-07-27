@@ -5,6 +5,8 @@ import actionshot from "./assets/actionshot.png";
 import logo from "./assets/logo.png";
 import cow from "./assets/special_cow.png";
 import jay from "./assets/jay_demo.png";
+import fridge from "./assets/fridge_organiser_logo.png";
+import beats from "./assets/beats_menu.png";
 import leftArrow from "./assets/left_arrow.png";
 import rightArrow from "./assets/right_arrow.png";
 
@@ -18,14 +20,26 @@ const projects = [
   {  
     title: "TagIt", 
     image: logo, 
-    description: "A mobile app that helps recover lost items using QR Codes attached to belongings. When scanned, the owner receives an email and the finder can leave an anonymous message about where the item was left. Users can manage multiple items and view the items' status through the app. POC focused on tagging school uniforms.", 
+    description: "A mobile app that helps recover lost items using QR codes attached to belongings. Built with React Native and Expo, using expo-camera for scanning and expo-notifications for push alerts. The FastAPI backend serves unique codes from PostgreSQL via asyncpg, with bcrypt hashed passwords, token authorised requests and privacy settings controlling how much of the owner's identity a finder sees. POC focused on tagging school uniforms.",
     path: "/tagit"
   },
-  { 
+  {
+    title: "Fridge Organiser",
+    image: fridge,
+    description: "A full stack web app built around the idea of a smart fridge. Items can be added manually or recognised automatically from a photo using AI image recognition with duplicates grouped and expiry dates tracked. Recipes are generated from the current contents, each with AI generated preview images, cooking steps and a list of missing ingredients while a shopping list is built from items that have run out. Built with a React frontend and a FastAPI backend, using PostgreSQL and JWT authentication over HTTP-only cookies.",
+    path: "/fridge-organiser"
+  },
+  {
     title: "Mooody Weather",
     image: cow, 
     description: "An interactive weather app built with a React frontend and a Python backend which displays real-time weather data through a dynamic, character-based UI. A custom character reacts to conditions in a selected city, with backgrounds that adapt to weather states. This project demonstrates early experience with React Native.", 
     path: "/mooody-weather"
+  },
+  {
+    title: "Beat Battle",
+    image: beats,
+    description: "A lane based arcade game where monsters advance across four lanes towards a laser line and the player switches lanes to throw a disc at them, losing health for each one that gets through and clearing the level once the score target is met. Built in Godot with GDScript, using area based collision detection, animated sprites and scene driven level selection, pass and fail states. Exported to WebAssembly so it runs in the browser directly on this site.",
+    path: "/beat-battle"
   },
   { 
     title: "Jay", 

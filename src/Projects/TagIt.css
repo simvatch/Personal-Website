@@ -1,0 +1,85 @@
+/* TagIt project page. The app is Android-only and can't run in the browser,
+   so the page leads with the demo video and an APK download rather than a
+   playable build. The whole page is locked to one screen: everything around
+   the video is fixed height, and the video takes whatever is left over. */
+
+.tagit-page {
+    height: 100vh;
+    min-height: 0;
+    max-height: 100vh;
+    overflow: hidden;
+    justify-content: flex-start;
+    padding: 18px 0;
+    box-sizing: border-box;
+}
+
+.tagit-inner {
+    height: 100%;
+    max-width: min(1100px, 94vw);
+    gap: 12px;
+}
+
+.tagit-page .project-title {
+    font-size: 2.8rem;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.tagit-intro {
+    max-width: 720px;
+    font-size: 0.85rem;
+    color: #ddd;
+    line-height: 1.5;
+    flex-shrink: 0;
+}
+
+/* The demo plays inline. It is the only flexible element on the page, so it
+   absorbs the leftover height and derives its width from that via the aspect
+   ratio, keeping the player's shape at any window size. */
+.tagit-video {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tagit-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.tagit-page .download-button {
+    flex-shrink: 0;
+    padding: 10px 20px;
+}
+
+.tagit-install-note {
+    max-width: 620px;
+    font-size: 0.75rem;
+    color: #999;
+    line-height: 1.5;
+    flex-shrink: 0;
+}
+
+/* Short windows: trim the text so the video keeps its room. */
+@media (max-height: 700px) {
+    .tagit-page .project-title {
+        font-size: 2.2rem;
+    }
+
+    .tagit-intro {
+        font-size: 0.8rem;
+    }
+
+    .tagit-install-note {
+        display: none;
+    }
+}

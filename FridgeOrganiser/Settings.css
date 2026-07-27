@@ -1,0 +1,201 @@
+/* Scoped copy of fridge-organiser Settings.css — every selector is nested under
+   .fridge-app-root so it cannot leak into the rest of the site.
+   Generated from C:\Fridge Organiser\fridge-organiser\src\Settings.css */
+
+.fridge-app-root .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+  font-family: "Comic Relief", system-ui, sans-serif;
+}
+
+.fridge-app-root .settings-window {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 460px;
+  padding: 24px;
+  height: auto;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 25, 95, 0.1), 0 10px 10px -5px rgba(0, 25, 95, 0.04);
+  animation: fo-modalSlideUp 0.25s ease-out;
+  border-top: 6px solid #00195f;
+  box-sizing: border-box;
+}
+
+.fridge-app-root .settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1cqb;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.fridge-app-root .settings-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.fridge-app-root .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.fridge-app-root .close-btn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.fridge-app-root .settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.fridge-app-root .settings-group:last-of-type {
+  margin-bottom: 10px; 
+}
+
+.fridge-app-root .settings-group label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #00195f;
+}
+
+.fridge-app-root .settings-group select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  color: #00195f;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: "Comic Relief", system-ui;
+}
+
+.fridge-app-root .settings-group select:focus {
+  border-color: #0033b8;
+  box-shadow: 0 0 0 3px rgba(0, 51, 184, 0.15);
+}
+
+@keyframes fo-modalSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fridge-app-root .settings-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.fridge-app-root .cancel-btn {
+  background: transparent;
+  border: 1px solid #64748b;
+  padding: 8px 16px;
+  border-radius: 15px;
+  font-family: "Comic Relief", system-ui;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fridge-app-root .settings-content {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 6px;
+  margin-bottom: 12px;
+}
+
+.fridge-app-root .cancel-btn:hover {
+  background: #f1f5f9;
+  color: #334155;
+  border-color: #94a3b8;
+}
+
+.fridge-app-root .save-btn {
+  background: #00195f; 
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "Comic Relief", system-ui, sans-serif; 
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.fridge-app-root .cancel-btn,
+.fridge-app-root .save-btn {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+}
+
+.fridge-app-root .save-btn:hover {
+  background-color: #0033b8;
+}
+
+.fridge-app-root .save-btn:active {
+  transform: scale(0.98);
+}
+
+.fridge-app-root .multiselect-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 8px 0;
+}
+
+.fridge-app-root .multiselect-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.fridge-app-root .multiselect-option input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}

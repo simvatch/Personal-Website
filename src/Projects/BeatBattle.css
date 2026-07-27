@@ -1,0 +1,63 @@
+.beat-battle-container {
+    height: 100vh;
+    min-height: 0;
+    max-height: 100vh;
+    overflow: hidden;
+    justify-content: flex-start;
+    padding: 18px 0;
+    box-sizing: border-box;
+}
+
+.beat-battle-container .game-inner {
+    height: 100%;
+}
+
+.beat-battle-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.beat-battle-page .project-title {
+    font-size: 5rem;
+    margin: 0 0 10px;
+    flex-shrink: 0;
+}
+
+.beat-battle-page .demo-wrapper {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    max-height: 62vh;
+    width: auto;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0 0 10px;
+}
+
+.beat-battle-page .info {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    max-width: 760px;
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+.beat-battle-page .github-link {
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.beat-battle-page .demo-container {
+    overflow: hidden;
+}
+
+.beat-battle-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: #000;
+}

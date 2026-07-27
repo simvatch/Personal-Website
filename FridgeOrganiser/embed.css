@@ -1,0 +1,80 @@
+/* Neutralises the personal site's global element styles (index.css / Projects.css
+   set a dark `button`, a purple `a`, an oversized `h1`) so the embedded Fridge
+   Organiser renders the way it does in its own standalone app. Loaded before
+   App.css/Login.css/Settings.css so the scoped component rules still win. */
+
+.fridge-app-root {
+  color: #08060d;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Two class names are used by both the site and the fridge app: `section` and
+   `title`. Scoping the fridge CSS stopped it leaking outward, but the site's
+   own global rules still reach in, so they are cancelled here.
+   `.section` is the important one — the site makes it a 100vh flex row, which
+   laid each recipe card's ingredients and steps out side by side. */
+.fridge-app-root .section {
+  display: block;
+  position: static;
+  width: auto;
+  min-height: 0;
+  overflow: visible;
+  isolation: auto;
+  box-shadow: none;
+  justify-content: normal;
+  align-items: normal;
+  scroll-snap-align: none;
+}
+
+.fridge-app-root .title {
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+.fridge-app-root button {
+  padding: 0.4em 0.9em;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 1rem;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.fridge-app-root button:hover {
+  border-color: transparent;
+}
+
+.fridge-app-root a {
+  font-weight: inherit;
+  color: #0052cc;
+  text-decoration: underline;
+}
+
+.fridge-app-root a:hover {
+  color: #00195f;
+}
+
+.fridge-app-root h1 {
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+/* The auth screens used plain <a> links to switch between login and signup.
+   Embedded, those are buttons driving local state, so they need to look like links. */
+.fridge-app-root .auth-toggle-link {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: #0052cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.fridge-app-root .auth-toggle-link:hover {
+  color: #00195f;
+}
