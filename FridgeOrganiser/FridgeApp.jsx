@@ -9,8 +9,6 @@ import { API_BASE } from "./api"
 
 export default function FridgeApp() {
   const [isAuthenticated, setIsAuthenticated] = useState(null)
-  // The site owns the router, so login/signup are swapped by local state here
-  // instead of the /login and /signup routes the standalone app used.
   const [authView, setAuthView] = useState("login")
 
   const [items, setItems] = useState([])

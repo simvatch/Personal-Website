@@ -10,7 +10,7 @@ export default function FridgeOrganiser(){
             <div className="game-inner fridge-inner">
                 <h1 className="project-title">Fridge Organiser</h1>
 
-                <p className="info">The full app runs right here — sign up or log in to track what's in your fridge, scan it from a photo and generate recipes from what you have.</p>
+                <p className="info">The full app runs right here. Sign up or log in to track what's in your fridge, scan it from a photo and generate recipes from what you have.</p>
 
                 <div className="fridge-app-root">
                     <FridgeApp />

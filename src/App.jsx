@@ -85,16 +85,10 @@ const sections = [
   { title: 'Contact', color: '#2b2b2b', className: 'contact' }
 ];
 
-// Where the user was on the home page when they opened a project, so returning
-// puts them back at the same section instead of at the top. Session-scoped, so
-// a brand new visit still starts at the hero.
 const HOME_SCROLL_KEY = 'homeScrollY'
 
 function Home() {
   useLayoutEffect(() => {
-    // The home button on each project page is a plain link, so coming back is a
-    // full page load. Take scroll handling off the browser to avoid it restoring
-    // a position of its own and fighting the one below.
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }

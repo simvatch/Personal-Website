@@ -38,7 +38,7 @@ const projects = [
   {
     title: "Beat Battle",
     image: beats,
-    description: "A lane based arcade game where monsters advance across four lanes towards a laser line and the player switches lanes to throw a disc at them, losing health for each one that gets through and clearing the level once the score target is met. Built in Godot with GDScript, using area based collision detection, animated sprites and scene driven level selection, pass and fail states. Exported to WebAssembly so it runs in the browser directly on this site.",
+    description: "A lane based arcade game where monsters advance across four lanes towards a laser line and the player switches lanes to throw a disc at them, losing health for each one that gets through and clearing the level once the score target is met. Built in Godot with GDScript, using area based collision detection, animated sprites and scene driven level selection, pass and fail states.",
     path: "/beat-battle"
   },
   { 

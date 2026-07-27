@@ -1,7 +1,3 @@
-/* Scoped copy of fridge-organiser Settings.css — every selector is nested under
-   .fridge-app-root so it cannot leak into the rest of the site.
-   Generated from C:\Fridge Organiser\fridge-organiser\src\Settings.css */
-
 .fridge-app-root .modal-overlay {
   position: fixed;
   top: 0;

@@ -1,8 +1,3 @@
-/* The Fridge Organiser page runs the whole app inline, so the page itself is
-   locked to the viewport: wider than the standard 900px project column and
-   exactly one screen tall. Any overflow scrolls inside the app frame instead
-   of scrolling the page. */
-
 .fridge-page {
     height: 100vh;
     min-height: 0;
@@ -34,7 +29,6 @@
     flex-shrink: 0;
 }
 
-/* The app frame: takes the leftover height and scrolls its own content. */
 .fridge-page .fridge-app-root {
     flex: 1;
     min-height: 0;
@@ -46,17 +40,11 @@
     background: #e0ffff;
 }
 
-/* The standalone app sized itself to the viewport; inside the frame it should
-   fill the frame instead, with tighter padding now that it is shorter. */
 .fridge-page .fridge-app-root .app {
     min-height: 100%;
     padding: 20px 24px;
 }
 
-/* .top-bar bleeds outward with negative margins to sit flush against the top
-   of the app. Those margins are hard-coded to the standalone app's 40px 20px
-   padding, so they have to be re-matched to the tighter padding above or the
-   bar is pulled outside the frame and clipped. */
 .fridge-page .fridge-app-root .top-bar {
     width: calc(100% + 48px);
     margin-left: -24px;

@@ -1,8 +1,3 @@
-/* Neutralises the personal site's global element styles (index.css / Projects.css
-   set a dark `button`, a purple `a`, an oversized `h1`) so the embedded Fridge
-   Organiser renders the way it does in its own standalone app. Loaded before
-   App.css/Login.css/Settings.css so the scoped component rules still win. */
-
 .fridge-app-root {
   color: #08060d;
   font-family: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -10,11 +5,6 @@
   text-align: left;
 }
 
-/* Two class names are used by both the site and the fridge app: `section` and
-   `title`. Scoping the fridge CSS stopped it leaking outward, but the site's
-   own global rules still reach in, so they are cancelled here.
-   `.section` is the important one — the site makes it a 100vh flex row, which
-   laid each recipe card's ingredients and steps out side by side. */
 .fridge-app-root .section {
   display: block;
   position: static;
@@ -63,8 +53,6 @@
   line-height: 1.2;
 }
 
-/* The auth screens used plain <a> links to switch between login and signup.
-   Embedded, those are buttons driving local state, so they need to look like links. */
 .fridge-app-root .auth-toggle-link {
   padding: 0;
   border: none;

@@ -1,7 +1,3 @@
-/* Scoped copy of fridge-organiser Login.css — every selector is nested under
-   .fridge-app-root so it cannot leak into the rest of the site.
-   Generated from C:\Fridge Organiser\fridge-organiser\src\Login.css */
-
 .fridge-app-root .login-container {
     display: flex;
     justify-content: center;

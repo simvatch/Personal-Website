@@ -1,8 +1,3 @@
-/* TagIt project page. The app is Android-only and can't run in the browser,
-   so the page leads with the demo video and an APK download rather than a
-   playable build. The whole page is locked to one screen: everything around
-   the video is fixed height, and the video takes whatever is left over. */
-
 .tagit-page {
     height: 100vh;
     min-height: 0;
@@ -33,9 +28,6 @@
     flex-shrink: 0;
 }
 
-/* The demo plays inline. It is the only flexible element on the page, so it
-   absorbs the leftover height and derives its width from that via the aspect
-   ratio, keeping the player's shape at any window size. */
 .tagit-video {
     flex: 1 1 auto;
     min-height: 0;
@@ -69,7 +61,6 @@
     flex-shrink: 0;
 }
 
-/* Short windows: trim the text so the video keeps its room. */
 @media (max-height: 700px) {
     .tagit-page .project-title {
         font-size: 2.2rem;
