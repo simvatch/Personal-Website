@@ -286,7 +286,37 @@
     margin-top: 4px;
 }
 
-.console-input { 
+.console-examples {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.console-example {
+  font-family: monospace;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: 1px solid #3a3f5c;
+  border-radius: 999px;
+  background: rgba(58, 63, 92, 0.35);
+  color: #d8dcf0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.console-example:hover:not(:disabled) {
+  background: rgba(74, 79, 108, 0.6);
+  transform: translateY(-2px);
+}
+
+.console-example:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.console-input {
   width: 100%;
   padding: 8px;
   font-family: monospace;

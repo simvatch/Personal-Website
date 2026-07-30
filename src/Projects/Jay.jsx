@@ -1,35 +1,36 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FiDownload, FiGithub, FiHome } from "react-icons/fi";
+import { jayExecute, EXAMPLE_COMMANDS } from "./jayEngine";
 import "../Projects.css"
+import "./Jay.css"
 
 export default function Jay(){
 
     const [input, setInput] = useState("");
     const [output, setOutput] = useState([]);
+    const [thinking, setThinking] = useState(false);
 
     const bottomRef = useRef(null);
 
+    const addJayLine = (text) => setOutput((prev) => [...prev, { type: "jay", text }]);
+
+    const runCommand = async (command) => {
+        setOutput((prev) => [...prev, { type: "user", text: command }]);
+        setThinking(true);
+
+        const response = await jayExecute(command, addJayLine);
+        if (response) addJayLine(response);
+
+        setThinking(false);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!input) return;
+        if (!input || thinking) return;
 
-        setOutput ((prev) => [...prev, {type: "user", text: input}]);
-
-        try {
-            const res = await fetch("https://personal-website-1z1a.onrender.com", {
-                method: "POST",
-                headers: { "Content-type": "application/json" },
-                body: JSON.stringify({ command: input }),
-            });
-
-            const data = await res.json();
-
-            setOutput((prev) => [...prev, { type: "jay", text: data.response }]);
-        } catch (err) {
-            setOutput((prev) => [...prev, { type: "jay", text: "Error: Could not reach backend." }]);
-        }
-
+        const command = input;
         setInput("");
+        await runCommand(command);
     };
 
     useEffect(() => {
@@ -37,7 +38,7 @@ export default function Jay(){
     }, [output])
 
     return (
-        <div className="game-page">
+        <div className="game-page jay-page">
             <div className="game-inner">
                 <h1 className="project-title">Jay</h1>
 
@@ -50,13 +51,14 @@ export default function Jay(){
                             {line.text}
                         </div>
                     ))}
+                    {thinking && <div className="console-jay">Jay: ...</div>}
                     <div className="console-prompt">&gt;</div>
 
                     <div ref={bottomRef}/>
                 </div>
 
                 <form onSubmit={handleSubmit}>
-                    <input 
+                    <input
                         type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
@@ -65,20 +67,36 @@ export default function Jay(){
                     />
                 </form>
 
-                <a href="/jay.zip" className="download-button" download>
-                <FiDownload style={{ marginRight: "8px" }} />
-                Download For Full Functionality
-                </a>
+                <div className="console-examples">
+                    {EXAMPLE_COMMANDS.map((example) => (
+                        <button
+                            key={example}
+                            type="button"
+                            className="console-example"
+                            onClick={() => runCommand(example)}
+                            disabled={thinking}
+                        >
+                            {example}
+                        </button>
+                    ))}
+                </div>
 
-                <a
-                href="https://github.com/simvatch/Jay"
-                className="github-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                <FiGithub style={{ marginRight: "8px" }} />
-                GitHub Repository
-                </a>
+                <div className="jay-links">
+                    <a href="/jay.zip" className="download-button" download>
+                    <FiDownload style={{ marginRight: "8px" }} />
+                    Download For Full Functionality
+                    </a>
+
+                    <a
+                    href="https://github.com/simvatch/Jay"
+                    className="github-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <FiGithub style={{ marginRight: "8px" }} />
+                    GitHub Repository
+                    </a>
+                </div>
             </div>
             <a href="/" className="home-button">
                 <FiHome />

@@ -1,0 +1,73 @@
+.jay-page {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    justify-content: flex-start;
+    padding: 20px 16px;
+    box-sizing: border-box;
+}
+
+.jay-page .game-inner {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.jay-page .project-title {
+    font-size: clamp(2.2rem, 7vh, 4rem);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.jay-page .info {
+    margin: 0;
+}
+
+.jay-page .console {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+    margin-bottom: 0;
+}
+
+.jay-page form {
+    width: 100%;
+}
+
+.jay-page .console-examples {
+    margin: 0;
+}
+
+.jay-page .jay-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.jay-page .download-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+@media (max-height: 620px) {
+    .jay-page .console-examples {
+        display: none;
+    }
+
+    .jay-page .info {
+        font-size: 0.85rem;
+    }
+
+    .jay-page .home-button {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+        top: 16px;
+        left: 16px;
+    }
+}
