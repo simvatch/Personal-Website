@@ -139,7 +139,7 @@ body {
   pointer-events: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section {
     min-height: auto;
     overflow: visible;
@@ -181,6 +181,32 @@ body {
     padding-bottom: 4rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    box-sizing: border-box;
+    gap: 1rem;
+  }
+
+  .projects-title {
+    margin-bottom: 0;
+  }
+}
+
+/* Tablet landscape: let the projects section grow past 100vh instead of
+   clipping the carousel arrows off the bottom. */
+@media (min-width: 1025px) and (max-width: 1400px) and (pointer: coarse) {
+  .section {
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .stack-section {
+    position: relative;
+    top: auto;
+  }
+
+  .projects {
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 1rem;
     box-sizing: border-box;
     gap: 1rem;
   }
