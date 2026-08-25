@@ -9,6 +9,7 @@
 
 .track {
     display: flex;
+    width: 100%;
     transition: transform 0.4s ease;
 }
 
@@ -527,6 +528,7 @@ button {
 
     .viewport {
         min-height: 60vh;
+        min-width: 0;
         align-items: center;
     }
 
@@ -538,9 +540,26 @@ button {
         transform: none;
     }
 
+    .slide {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
     .project-image,
     .project-image-wrapper {
         height: min(300px, 32vh);
+    }
+
+    .project-image-wrapper {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .project-image {
+        width: 100%;
+        max-width: 100%;
     }
 
     .description {
