@@ -2,7 +2,7 @@
     overflow-y: visible;
     overflow-x: hidden;
     width: 100%;
-    height: min(700px, 72vh);
+    height: 700px;
     display: flex;
     align-items: center;
 }
@@ -36,7 +36,7 @@
     padding: 0;
     cursor: pointer;
     outline: none;
-    height: min(700px, 72vh);
+    height: 700px;
     display: flex;
     align-items: center;
 }
