@@ -430,6 +430,10 @@ button {
         grid-column: 2;
     }
 
+    .carousel > * {
+        min-width: 0;
+    }
+
     .track {
         width: 100%;
     }
@@ -451,6 +455,8 @@ button {
         width: 100%;
         max-width: 100%;
         height: auto;
+        box-sizing: border-box;
+        padding: 0;
     }
 
     .project-image-wrapper::before,
@@ -506,9 +512,6 @@ button {
     }
 }
 
-/* Tablets in landscape (iPad Pro etc.) keep the wide layout but must not rely
-   on the fixed 700px block or the arrow offset, which pushed the arrows out of
-   the clipped section and made them untappable. */
 @media (min-width: 1025px) and (max-width: 1400px) and (pointer: coarse) {
     .carousel {
         align-self: center;
@@ -550,7 +553,6 @@ button {
     }
 }
 
-/* Touch devices never fire :hover, so the arrows stayed at 0.4 opacity. */
 @media (hover: none) {
     .arrow {
         opacity: 0.85;
