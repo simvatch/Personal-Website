@@ -2,17 +2,56 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.simonavatcheva.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.simonavatcheva.com"
+        }
+      ],
       "destination": "https://simonavatcheva.com/:path*",
       "permanent": true
     }
   ],
   "rewrites": [
-    { "source": "/study-easy", "destination": "/study-easy/index.html" },
-    { "source": "/study-easy/privacy-policy", "destination": "/study-easy/privacy-policy.html" },
-    { "source": "/study-easy/terms-of-service", "destination": "/study-easy/terms-of-service.html" },
-    { "source": "/study-easy/term-of-service", "destination": "/study-easy/terms-of-service.html" },
-    { "source": "/study-easy/(.*)", "destination": "/study-easy/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/study-easy",
+      "destination": "/study-easy/index.html"
+    },
+    {
+      "source": "/study-easy/",
+      "destination": "/study-easy/index.html"
+    },
+    {
+      "source": "/study-easy/privacy-policy",
+      "destination": "/study-easy/privacy-policy.html"
+    },
+    {
+      "source": "/study-easy/privacy-policy/",
+      "destination": "/study-easy/privacy-policy.html"
+    },
+    {
+      "source": "/study-easy/terms-of-service",
+      "destination": "/study-easy/terms-of-service.html"
+    },
+    {
+      "source": "/study-easy/terms-of-service/",
+      "destination": "/study-easy/terms-of-service.html"
+    },
+    {
+      "source": "/study-easy/term-of-service",
+      "destination": "/study-easy/terms-of-service.html"
+    },
+    {
+      "source": "/study-easy/term-of-service/",
+      "destination": "/study-easy/terms-of-service.html"
+    },
+    {
+      "source": "/study-easy/(.*)",
+      "destination": "/study-easy/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
