@@ -8,6 +8,8 @@
     }
   ],
   "rewrites": [
+    { "source": "/study-easy", "destination": "/study-easy/index.html" },
+    { "source": "/study-easy/(.*)", "destination": "/study-easy/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
