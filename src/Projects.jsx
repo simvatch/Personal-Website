@@ -7,10 +7,18 @@ import cow from "./assets/special_cow.png";
 import jay from "./assets/jay_demo.png";
 import fridge from "./assets/fridge_organiser_logo.png";
 import beats from "./assets/beats_menu.png";
+import studyEasy from "./assets/study_easy.png";
 import leftArrow from "./assets/left_arrow.png";
 import rightArrow from "./assets/right_arrow.png";
 
 const projects = [
+  {
+    title: "Study Easy",
+    image: studyEasy,
+    description: "A study planner that turns weekly hour targets into real calendar sessions. It reads your Google Calendar to find free time, fits sessions around your availability, travel time and buffers, then writes them back to a calendar of your choice. Anything you miss is rolled into the following week, and an eight week progress view tracks how much of each subject you actually completed. Built with Claude, using a React and TypeScript frontend and a FastAPI backend, with PostgreSQL, Google OAuth and JWT authentication.",
+    path: "/study-easy",
+    external: true
+  },
   { 
     title: "Bones and Blades",
     image: actionshot, 
@@ -104,9 +112,15 @@ export default function Carousel() {
             <div className="slide" key={i}>
               <div className="slide-content">
                 <div className="project-image-wrapper">
-                  <Link to={p.path}>
-                    <img className="project-image" src={p.image} />
-                  </Link>
+                  {p.external ? (
+                    <a href={p.path}>
+                      <img className="project-image" src={p.image} />
+                    </a>
+                  ) : (
+                    <Link to={p.path}>
+                      <img className="project-image" src={p.image} />
+                    </Link>
+                  )}
                 </div>
                 <h3 className="header">{p.title}</h3>
                 <p className="description">{p.description}</p>
