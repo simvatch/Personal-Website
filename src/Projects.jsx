@@ -12,13 +12,6 @@ import leftArrow from "./assets/left_arrow.png";
 import rightArrow from "./assets/right_arrow.png";
 
 const projects = [
-  {
-    title: "Study Easy",
-    image: studyEasy,
-    description: "A study planner that turns weekly hour targets into real calendar sessions. It reads your Google Calendar to find free time, fits sessions around your availability, travel time and buffers, then writes them back to a calendar of your choice. Anything you miss is rolled into the following week, and an eight week progress view tracks how much of each subject you actually completed. Built with Claude, using a React and TypeScript frontend and a FastAPI backend, with PostgreSQL, Google OAuth and JWT authentication.",
-    path: "/study-easy",
-    external: true
-  },
   { 
     title: "Bones and Blades",
     image: actionshot, 
@@ -48,6 +41,13 @@ const projects = [
     image: beats,
     description: "A lane based arcade game where monsters advance across four lanes towards a laser line and the player switches lanes to throw a disc at them, losing health for each one that gets through and clearing the level once the score target is met. Built in Godot with GDScript, using area based collision detection, animated sprites and scene driven level selection, pass and fail states.",
     path: "/beat-battle"
+  },
+  {
+    title: "Study Easy",
+    image: studyEasy,
+    description: "A study planner that turns weekly hour targets into real calendar sessions. It reads your Google Calendar to find free time, fits sessions around your availability, travel time and buffers, then writes them back to a calendar of your choice. Anything you miss is rolled into the following week, and an eight week progress view tracks how much of each subject you actually completed. Built with Claude, using a React and TypeScript frontend and a FastAPI backend, with PostgreSQL, Google OAuth and JWT authentication.",
+    path: "/study-easy",
+    external: true
   },
   { 
     title: "Jay", 
