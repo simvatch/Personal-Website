@@ -8,6 +8,7 @@ import jay from "./assets/jay_demo.png";
 import fridge from "./assets/fridge_organiser_logo.png";
 import beats from "./assets/beats_menu.png";
 import studyEasy from "./assets/study_easy.png";
+import whiteboard from "./assets/whiteboard.png";
 import leftArrow from "./assets/left_arrow.png";
 import rightArrow from "./assets/right_arrow.png";
 
@@ -47,6 +48,13 @@ const projects = [
     image: studyEasy,
     description: "A study planner that turns weekly hour targets into real calendar sessions. It reads your Google Calendar to find free time and fits sessions around your availability, travel time and buffers, then writes sessions back to a calendar of your choice. Anything you miss is rolled into the following week. An eight week progress view tracks how much of each subject you actually completed. Built with Claude, with a React and TypeScript frontend and a FastAPI backend, using PostgreSQL, Google OAuth and JWT authentication.",
     path: "/study-easy",
+    external: true
+  },
+  {
+    title: "Whiteboard",
+    image: whiteboard,
+    description: "An endless whiteboard for planning and sketching out ideas, with shapes, connectors, sticky notes, text boxes, freehand drawing and images that can be cropped or clipped to a shape. The same board can also be viewed as a mind map, a to-do list or a week plan, and exported as an image or PDF. Boards are saved to your account after signing in with Google or Microsoft. Built with Claude, with a React and TypeScript frontend using React Flow and a FastAPI backend, using PostgreSQL and session cookies.",
+    path: "/whiteboard/",
     external: true
   },
   { 

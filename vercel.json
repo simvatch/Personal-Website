@@ -50,6 +50,18 @@
       "destination": "/study-easy/index.html"
     },
     {
+      "source": "/whiteboard",
+      "destination": "/whiteboard/index.html"
+    },
+    {
+      "source": "/whiteboard/",
+      "destination": "/whiteboard/index.html"
+    },
+    {
+      "source": "/whiteboard/(.*)",
+      "destination": "/whiteboard/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
@@ -75,6 +87,33 @@
     },
     {
       "source": "/study-easy/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/whiteboard",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/whiteboard/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/whiteboard/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
