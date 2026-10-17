@@ -1,1 +1,1 @@
-export const API_BASE = "https://fridge-organiser.onrender.com"
+export const API_BASE = "https://fridge.simonavatcheva.com"
