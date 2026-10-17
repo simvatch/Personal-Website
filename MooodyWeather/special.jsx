@@ -185,7 +185,7 @@ function SpecialCowPage({ setPageFunction }) {
     const [thunderLeft, setThunderLeft] = useState("50%");
     const [tornadoes, setTornadoes] = useState([]);
 
-    const API_BASE = "https://personal-website-1z1a.onrender.com";
+    const API_BASE = "https://website.simonavatcheva.com";
 
     const handleGetWeather = async () => {
         if (!city) return;
