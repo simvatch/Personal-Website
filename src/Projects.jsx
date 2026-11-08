@@ -9,6 +9,7 @@ import fridge from "./assets/fridge_organiser_logo.png";
 import beats from "./assets/beats_menu.png";
 import studyEasy from "./assets/study_easy.png";
 import whiteboard from "./assets/whiteboard.png";
+import flipside from "./assets/flipside.png";
 import leftArrow from "./assets/left_arrow.png";
 import rightArrow from "./assets/right_arrow.png";
 
@@ -55,6 +56,13 @@ const projects = [
     image: whiteboard,
     description: "An endless whiteboard for planning and sketching out ideas, with shapes, connectors, sticky notes, text boxes, freehand drawing and images that can be cropped or clipped to a shape. The same board can also be viewed as a mind map, a to-do list or a week plan, and exported as an image or PDF. Boards are saved to your account after signing in with Google or Microsoft. Built with Claude, with a React and TypeScript frontend using React Flow and a FastAPI backend, using PostgreSQL and session cookies.",
     path: "/whiteboard/",
+    external: true
+  },
+  {
+    title: "Flipside",
+    image: flipside,
+    description: "A flashcard app for making sets by hand or from notes, slides and photos, which AI turns into cards that can be checked and corrected before saving. Sets can be studied as swipeable flashcards, a multiple choice quiz, a typing mode or three games, with progress tracked for each card. Built with Claude, with a React and TypeScript frontend and a FastAPI backend, using PostgreSQL, Google and Microsoft sign-in and Hack Club AI.",
+    path: "/flipside/",
     external: true
   },
   { 
