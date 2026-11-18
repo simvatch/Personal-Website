@@ -121,6 +121,12 @@ body {
   margin-bottom: -55px;
 }
 
+@media (min-width: 1025px) {
+  .projects-title .title {
+    margin-top: 0;
+  }
+}
+
 .projects-carousel {
   display: flex;
   justify-content: center;

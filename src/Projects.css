@@ -1,10 +1,56 @@
 .viewport {
     overflow-y: visible;
-    overflow-x: hidden;
+    overflow-x: clip;
+    flex: 1 1 0;
+    min-width: 0;
     width: 100%;
-    height: 700px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.carousel .dots .dot {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 2px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0.6;
+    cursor: pointer;
+    flex: 0 0 auto;
+    align-self: center;
+    transition: opacity 0.2s ease, background 0.2s ease, padding 0.2s ease;
+}
+
+.carousel .dots .dot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #121212;
+}
+
+.carousel .dots .dot:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.carousel .dots .dot.active {
+    padding: 4px;
+    opacity: 1;
+    background: linear-gradient(135deg, #ff00ff, #8c00ff);
+    box-shadow: 0 0 10px rgba(200, 0, 255, 0.5);
 }
 
 .track {
@@ -17,12 +63,13 @@
     flex: 0 0 100%;
     min-width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
 
 .carousel {
+    --project-image-h: clamp(160px, calc(100vh - 515px), 300px);
     display: flex;
     justify-content: center;
     align-self: flex-end;
@@ -38,7 +85,8 @@
     padding: 0;
     cursor: pointer;
     outline: none;
-    height: 700px;
+    align-self: flex-start;
+    margin-top: calc(var(--project-image-h) / 2 - 37px);
     display: flex;
     align-items: center;
 }
@@ -56,7 +104,6 @@
 .arrow {
     opacity: 0.4;
     display: flex;
-    transform: translateY(-100px);
 }
 
 .arrow:hover {
@@ -66,7 +113,7 @@
 .project-image-wrapper {
   position: relative;
   width: fit-content; 
-  height: 300px;   
+  height: var(--project-image-h);   
   border-radius: 12px;
   overflow: hidden;  
   display: flex;
@@ -112,7 +159,7 @@
 .project-image {
   display: block;
   width: 100%;    
-  height: 300px;  
+  height: var(--project-image-h);  
   object-fit: cover; 
   border-radius: 12px;
   position: relative;
@@ -131,7 +178,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    transform: translateY(-30px);
+    margin: -30px 0 0;
 }
 
 .project-title {
@@ -383,6 +430,7 @@ button {
 }
 
 .slide-content {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -432,6 +480,15 @@ button {
         grid-column: 2;
     }
 
+    .dots {
+        gap: 8px;
+    }
+
+    .carousel .dots .dot {
+        width: 36px;
+        height: 36px;
+    }
+
     .carousel > * {
         min-width: 0;
     }
@@ -444,6 +501,7 @@ button {
         height: auto;
         padding: 0 0.25rem;
         align-self: center;
+        margin-top: 0;
     }
 
     .arrow {
@@ -475,6 +533,7 @@ button {
 
     .description {
         transform: none;
+        margin-top: 1em;
         padding: 0 0.5rem;
         max-width: 100%;
         font-size: 16px;
@@ -535,6 +594,7 @@ button {
 
     .carousel button {
         align-self: center;
+        margin-top: 0;
     }
 
     .arrow {
@@ -564,6 +624,7 @@ button {
 
     .description {
         transform: none;
+        margin-top: 1em;
         max-width: 46rem;
     }
 

@@ -47,7 +47,7 @@ const projects = [
   {
     title: "Study Easy",
     image: studyEasy,
-    description: "A study planner that turns weekly hour targets into real calendar sessions. It reads your Google Calendar to find free time and fits sessions around your availability, travel time and buffers, then writes sessions back to a calendar of your choice. Anything you miss is rolled into the following week. An eight week progress view tracks how much of each subject you actually completed. Built with Claude, with a React and TypeScript frontend and a FastAPI backend, using PostgreSQL, Google OAuth and JWT authentication.",
+    description: "A study planner that turns weekly hour targets into calendar sessions. It reads your calendar to find free time, fits sessions around your availability and writes them back to a calendar of your choice, with anything missed rolled into the following week. Built with Claude, with a React and TypeScript frontend and a FastAPI backend, using PostgreSQL and Google OAuth.",
     path: "/study-easy",
     external: true
   },
@@ -83,20 +83,24 @@ export default function Carousel() {
   const savedIndex = localStorage.getItem("carouselIndex");
   const [index, setIndex] = useState(savedIndex ? Number(savedIndex) : 1);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [duration, setDuration] = useState(0.4);
 
   const prev = () => {
     if (isAnimating) return;
+    setDuration(0.4);
     setIsAnimating(true);
     setIndex((i) => i - 1);
   };
 
   const next = () => {
     if (isAnimating) return;
+    setDuration(0.4);
     setIsAnimating(true);
     setIndex((i) => i + 1);
   };
 
-  const handleTransitionEnd = () => {
+  const handleTransitionEnd = (e) => {
+    if (e.target !== e.currentTarget) return;
     if (index === 0) {
       setIsAnimating(false);
       setIndex(projects.length);
@@ -111,6 +115,15 @@ export default function Carousel() {
     localStorage.setItem("carouselIndex", index);
   }, [index])
 
+  const activeIndex = ((index - 1) % projects.length + projects.length) % projects.length;
+
+  const goTo = (i) => {
+    if (isAnimating || i === activeIndex) return;
+    setDuration(Math.min(0.45 + Math.abs(i - activeIndex) * 0.08, 0.9));
+    setIsAnimating(true);
+    setIndex(i + 1);
+  };
+
   return (
     <div className="carousel">
       <button onClick={prev}><img className="arrow" src={leftArrow} width={80} height={80}/></button>
@@ -121,28 +134,45 @@ export default function Carousel() {
           onTransitionEnd={handleTransitionEnd}
           style={{
             transform: `translateX(-${index * 100}%)`,
-            transition: isAnimating ? "transform 0.4s ease" : "none",
+            transition: isAnimating ? `transform ${duration}s cubic-bezier(0.65, 0, 0.35, 1)` : "none",
           }}
         >
-          {extendedProjects.map((p, i) => (
-            <div className="slide" key={i}>
-              <div className="slide-content">
-                <div className="project-image-wrapper">
-                  {p.external ? (
-                    <a href={p.path}>
-                      <img className="project-image" src={p.image} />
-                    </a>
-                  ) : (
-                    <Link to={p.path}>
-                      <img className="project-image" src={p.image} />
-                    </Link>
-                  )}
+          {extendedProjects.map((p, i) => {
+            const slideIndex = (i - 1 + projects.length) % projects.length;
+            return (
+              <div className="slide" key={i}>
+                <div className="slide-content">
+                  <div className="project-image-wrapper">
+                    {p.external ? (
+                      <a href={p.path}>
+                        <img className="project-image" src={p.image} />
+                      </a>
+                    ) : (
+                      <Link to={p.path}>
+                        <img className="project-image" src={p.image} />
+                      </Link>
+                    )}
+                  </div>
+                  <h3 className="header">{p.title}</h3>
+                  <p className="description">{p.description}</p>
+                  <div className="dots">
+                    {projects.map((d, j) => (
+                      <button
+                        key={d.title}
+                        className={`dot${j === slideIndex ? " active" : ""}`}
+                        onClick={() => goTo(j)}
+                        title={d.title}
+                        aria-label={`Go to ${d.title}`}
+                        tabIndex={slideIndex === activeIndex && i === index ? 0 : -1}
+                      >
+                        <img src={d.image} alt="" />
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="header">{p.title}</h3>
-                <p className="description">{p.description}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
