@@ -10,11 +10,11 @@ const categories = {
     { flag: "gb", label: "Haven", date: "Nov 2026", title: "Haven Hackathon, London", description: "Came second place at the Haven hackathon in London in November 2026." },
   ],
   rowing: [
-    { label: "P'borough", date: "Jun 2024", title: "Peterborough Regatta", description: "Won my first rowing event at Peterborough Regatta in an octo, rowing at 4." },
+    { label: "P'borough", fullLabel: "Peterborough", date: "Jun 2024", title: "Peterborough Regatta", description: "Won my first rowing event at Peterborough Regatta in an octo, rowing at 4." },
     { label: "Kingston", date: "Jul 2024", title: "Kingston Regatta", description: "Won at Kingston Regattaom an octo, rowing at 4." },
     { label: "Star's Head", date: "Nov 2024", title: "Star Club Head of the River", description: "Won both the Women's J14 coxed quads, rowing at 2, and the J14 octos, rowing at 3, on the same day." },
-    { label: "H'smith", date: "Apr 2026", title: "Hammersmith Amateur Regatta", description: "Won the J15 coxed fours at Hammersmith Amateur Regatta, rowing at 2." },
-    { label: "Poplar", date: "May 2026", title: "J15 Eights A Final", description: "Finished second in the Women's J15 eights A final, rowing at 4, behind St Paul's." },
+    { label: "H'smith", fullLabel: "Hammersmith", date: "Apr 2026", title: "Hammersmith Amateur Regatta", description: "Won the J15 coxed fours at Hammersmith Amateur Regatta, rowing at 2." },
+    { label: "Poplar", date: "May 2026", title: "Poplar Regatta", description: "Finished second in the Women's J15 eights A final, rowing at 4, behind St Paul's." },
     { label: "NSR", date: "May 2026", title: "National Schools' Regatta", description: "Reached the A final of the J15 1st eights. Ended up finishing fifth in A final, rowing at 4." },
     { label: "Bulgaria", date: "Jun 2026", title: "Racing in Bulgaria", description: "Raced for Armeec over four days, winning the J16 single B final and finishing fourth in the J18 double and J18 coxless four finals." },
     { label: "Reading", date: "Oct 2026", title: "Reading Small Boats Head", description: "Won the Women's J16 coxless quads, rowing at 2 and making the calls." },
@@ -385,7 +385,7 @@ export default function Achievements() {
             <Character mode={mode} pose={mode === "other" ? a.pose : mode} />
           </div>
           <div className="ach-details" key={`${mode}-${selected}`}>
-            <span className="ach-meta">{a.date ? `${a.label} · ${a.date}` : a.label}</span>
+            <span className="ach-meta">{a.date ? `${a.fullLabel || a.label} · ${a.date}` : a.fullLabel || a.label}</span>
             <h3 className="ach-title">{a.title}</h3>
             <p className="ach-description">{a.description}</p>
           </div>
