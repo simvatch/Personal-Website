@@ -10,6 +10,7 @@ import TagIt from './Projects/TagIt'
 import FridgeOrganiser from './Projects/FridgeOrganiser'
 import BeatBattle from './Projects/BeatBattle'
 import Contact from './Contact'
+import Achievements from './Achievements'
 import Seo from './Seo'
 
 function WelcomeText() {
@@ -83,7 +84,8 @@ function BuiltbyText() {
 const sections = [
   { title: 'About', color: '#1a1a1a', className: 'about' },
   { title: 'Projects', color: '#222222', className: 'projects' },
-  { title: 'Contact', color: '#2b2b2b', className: 'contact' }
+  { title: 'Achievements', color: '#2a2a2a', className: 'achievements-section' },
+  { title: 'Contact', color: '#323232', className: 'contact' }
 ];
 
 const HOME_SCROLL_KEY = 'homeScrollY'
@@ -159,6 +161,8 @@ function Home() {
                     <Carousel />
                   </div>
                 </div>
+              ) : section.title === "Achievements" ? (
+                <Achievements />
               ) : section.title == "Contact" ? (
                 <div className='contact-wrapper'>
                   <Contact />

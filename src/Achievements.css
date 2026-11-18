@@ -1,0 +1,909 @@
+@property --ach-s {
+    syntax: "<number>";
+    initial-value: 1;
+    inherits: false;
+}
+
+.achievements {
+    --coding: #4cd964;
+    --rowing: #1e6fd9;
+    --other: #f5c542;
+    --top-coding: #a31f34;
+    --top-rowing: #7e3cc9;
+    --cream: #fefae0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 16px 40px 28px;
+    box-sizing: border-box;
+}
+
+.achievements .title {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.ach-stage {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 22px;
+    margin-top: 18px;
+}
+
+.ach-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.ach-stage .ach-node {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    background: #252522;
+    border: 3px solid rgba(254, 250, 224, 0.28);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    cursor: pointer;
+    transform: scale(var(--ach-s));
+    transition: --ach-s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: ach-node-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+}
+
+@keyframes ach-node-in {
+    from {
+        opacity: 0;
+        --ach-s: 0.2;
+    }
+}
+
+.ach-stage .ach-node:hover {
+    --ach-s: 1.08;
+    border-color: rgba(254, 250, 224, 0.6);
+}
+
+.ach-stage .ach-node:focus {
+    outline: none;
+}
+
+.ach-stage .ach-node:focus-visible {
+    outline: 2px solid var(--coding);
+    outline-offset: 4px;
+}
+
+.ach-stage .ach-node.active {
+    --ach-s: 1.18;
+}
+
+.ach-stage .ach-node.coding.active {
+    border-color: var(--coding);
+    box-shadow: 0 0 16px rgba(76, 217, 100, 0.34);
+}
+
+.ach-stage .ach-node.other.active {
+    border-color: var(--other);
+    box-shadow: 0 0 16px rgba(245, 197, 66, 0.31);
+}
+
+.ach-stage .ach-node.rowing.active {
+    border-color: var(--rowing);
+    box-shadow: 0 0 16px rgba(30, 111, 217, 0.31);
+}
+
+.ach-node-label {
+    font-family: "Indie Flower", cursive;
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--cream);
+    line-height: 1.3;
+}
+
+.ach-node-date {
+    font-family: "Comfortaa", cursive;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.ach-centre {
+    width: min(620px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ach-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    animation: ach-details-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes ach-details-in {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+}
+
+.ach-meta {
+    font-family: "Indie Flower", cursive;
+    font-size: 22px;
+    color: var(--cream);
+    opacity: 0.8;
+}
+
+.ach-title {
+    margin: 2px 0 10px;
+    font-family: "Comfortaa", cursive;
+    font-size: 28px;
+    font-weight: 999;
+}
+
+.ach-description {
+    margin: 0;
+    font-family: "Comfortaa", cursive;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #d8d8d8;
+}
+
+.ach-figure {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.ach-figure .ach-guy {
+    position: relative;
+}
+
+.ach-flag-wrap {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 64px;
+    height: 43px;
+    margin-left: 14px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.ach-flag-wrap.show {
+    opacity: 0.55;
+    animation: ach-flag-in 0.6s ease backwards;
+}
+
+@keyframes ach-flag-in {
+    from {
+        opacity: 0;
+    }
+}
+
+.ach-flag {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.ach-guy {
+    width: 190px;
+    height: auto;
+    overflow: visible;
+    margin-bottom: 6px;
+}
+
+.ach-guy * {
+    transform-box: view-box;
+}
+
+.guy-skin,
+.guy-nose,
+.guy-hand {
+    fill: #f2c39b;
+}
+
+.guy-hair {
+    fill: #5a3825;
+}
+
+.guy-leg {
+    fill: none;
+    stroke: #141414;
+    stroke-width: 9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.guy-shoe {
+    fill: var(--cream);
+}
+
+.guy-eye {
+    fill: #1a1a1a;
+}
+
+.guy-mouth {
+    fill: none;
+    stroke: #c0505a;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.guy-torso {
+    fill: var(--top-coding);
+    transition: fill 0.6s ease;
+}
+
+.ach-guy.rowing .guy-torso {
+    fill: var(--top-rowing);
+}
+
+.ach-guy.other .guy-torso {
+    fill: #151515;
+}
+
+.guy-arm {
+    fill: none;
+    stroke: #f2c39b;
+    stroke-width: 7;
+    stroke-linecap: round;
+}
+
+.guy-head {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.guy-head-wrap {
+    transform-origin: 88px 90px;
+}
+
+.ach-guy.pose-coding .guy-head-wrap,
+.ach-guy.pose-poetry .guy-head-wrap,
+.ach-guy.pose-guitar .guy-head-wrap {
+    animation: guy-nod 2.6s ease-in-out infinite;
+}
+
+@keyframes guy-nod {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(4deg); }
+}
+
+.guy-desk-group,
+.guy-coding-props,
+.guy-writing-props,
+.guy-arms-coding,
+.guy-arms-writing,
+.guy-rowing-props,
+.guy-arms-rowing,
+.guy-legs-rowing,
+.guy-oar,
+.guy-water,
+.guy-board-props,
+.guy-eq,
+.guy-arms-board,
+.guy-legs-standing,
+.guy-legs-seated,
+.guy-backpack,
+.guy-pack-strap,
+.guy-arms-hiking,
+.guy-ground,
+.guy-guitar,
+.guy-chair,
+.guy-arms-guitar,
+.guy-notes {
+    transition: opacity 0.5s ease, translate 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.ach-guy:not(.pose-coding):not(.pose-poetry) .guy-desk-group {
+    opacity: 0;
+    translate: 60px 0;
+}
+
+.ach-guy:not(.pose-coding) .guy-coding-props {
+    opacity: 0;
+    translate: 60px 0;
+}
+
+.ach-guy:not(.pose-poetry) .guy-writing-props {
+    opacity: 0;
+    translate: 0 -14px;
+}
+
+.ach-guy:not(.pose-coding) .guy-arms-coding,
+.ach-guy:not(.pose-poetry) .guy-arms-writing {
+    opacity: 0;
+}
+
+.ach-guy:not(.pose-rowing) .guy-rowing-props,
+.ach-guy:not(.pose-rowing) .guy-water,
+.ach-guy:not(.pose-rowing) .guy-oar {
+    opacity: 0;
+    translate: -60px 0;
+}
+
+.ach-guy:not(.pose-rowing) .guy-arms-rowing,
+.ach-guy:not(.pose-rowing) .guy-legs-rowing {
+    opacity: 0;
+}
+
+.ach-guy:not(.pose-physics):not(.pose-maths) .guy-board-props {
+    opacity: 0;
+    translate: 60px 0;
+}
+
+.ach-guy:not(.pose-physics) .guy-eq-physics,
+.ach-guy:not(.pose-maths) .guy-eq-maths {
+    opacity: 0;
+}
+
+.ach-guy:not(.pose-physics):not(.pose-maths) .guy-arms-board {
+    opacity: 0;
+}
+
+.ach-guy:not(.pose-physics):not(.pose-maths):not(.pose-dofe) .guy-legs-standing {
+    opacity: 0;
+    translate: 0 -10px;
+}
+
+.ach-guy:not(.pose-guitar) .guy-chair,
+.ach-guy:not(.pose-guitar) .guy-legs-seated,
+.ach-guy:not(.pose-guitar) .guy-arms-guitar {
+    opacity: 0;
+}
+
+.ach-guy:not(.pose-guitar) .guy-guitar,
+.ach-guy:not(.pose-guitar) .guy-notes {
+    opacity: 0;
+    translate: 40px 0;
+}
+
+.ach-guy:not(.pose-dofe) .guy-backpack {
+    opacity: 0;
+    translate: -40px 0;
+}
+
+.ach-guy:not(.pose-dofe) .guy-pack-strap,
+.ach-guy:not(.pose-dofe) .guy-arms-hiking,
+.ach-guy:not(.pose-dofe) .guy-ground {
+    opacity: 0;
+}
+
+.guy-board {
+    fill: #f7f7f2;
+    stroke: #9a9a92;
+    stroke-width: 3;
+}
+
+.guy-board-leg {
+    fill: none;
+    stroke: #9a9a92;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.guy-eq text {
+    font-family: "Indie Flower", cursive;
+    font-size: 13px;
+    font-weight: bold;
+    fill: #1e3a8a;
+}
+
+.guy-eq .e1 { animation: guy-eq 6s ease-in-out infinite; }
+.guy-eq .e2 { animation: guy-eq 6s ease-in-out infinite; animation-delay: 0.6s; }
+.guy-eq .e3 { animation: guy-eq 6s ease-in-out infinite; animation-delay: 1.2s; }
+
+@keyframes guy-eq {
+    0%, 6% { opacity: 0; }
+    16%, 85% { opacity: 1; }
+    95%, 100% { opacity: 0; }
+}
+
+.guy-marker {
+    fill: none;
+    stroke: #1e3a8a;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.ach-guy.pose-physics .guy-board-hand,
+.ach-guy.pose-maths .guy-board-hand {
+    animation: guy-board-write 1.2s ease-in-out infinite;
+}
+
+@keyframes guy-board-write {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(5px, 2px); }
+}
+
+.pack-main {
+    fill: #3d8fcc;
+}
+
+.pack-roll {
+    fill: #7dbbe8;
+}
+
+.pack-pocket {
+    fill: #2c74ad;
+}
+
+.pack-flap {
+    fill: none;
+    stroke: #1f5683;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.guy-pack-strap {
+    fill: none;
+    stroke: #1f5683;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.ground-base {
+    fill: none;
+    stroke: #1f4d22;
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+
+.ground-tufts {
+    fill: none;
+    stroke: #2f6b31;
+    stroke-width: 3;
+    stroke-dasharray: 4 14;
+    stroke-linecap: round;
+    animation: guy-ground 0.9s linear infinite;
+}
+
+@keyframes guy-ground {
+    to { stroke-dashoffset: 18; }
+}
+
+.ach-guy.pose-dofe .guy-leg-a {
+    transform-origin: 82px 130px;
+    animation: guy-step 0.9s ease-in-out infinite;
+}
+
+.ach-guy.pose-dofe .guy-leg-b {
+    transform-origin: 95px 130px;
+    animation: guy-step 0.9s ease-in-out infinite;
+    animation-delay: -0.45s;
+}
+
+@keyframes guy-step {
+    0%, 100% { transform: rotate(-16deg); }
+    50% { transform: rotate(16deg); }
+}
+
+.ach-guy.pose-dofe .guy-arms-hiking {
+    transform-origin: 98px 103px;
+    animation: guy-step 0.9s ease-in-out infinite;
+}
+
+.ach-guy.pose-dofe .guy-body {
+    animation: guy-bob 0.45s ease-in-out infinite alternate;
+}
+
+@keyframes guy-bob {
+    to { transform: translateY(-2px); }
+}
+
+.chair-frame {
+    fill: none;
+    stroke: #6b4423;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.chair-seat,
+.chair-back {
+    fill: #8a5a2b;
+}
+
+.guitar-neck {
+    stroke: #6b4423;
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+
+.guitar-head {
+    fill: #4a2e16;
+}
+
+.guitar-body {
+    fill: #c27a32;
+}
+
+.guitar-hole {
+    fill: #2a1a0a;
+}
+
+.guitar-strings {
+    stroke: rgba(254, 250, 224, 0.75);
+    stroke-width: 0.6;
+}
+
+.ach-guy.pose-guitar .guy-strum {
+    animation: guy-strum 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes guy-strum {
+    to { transform: translateY(5px); }
+}
+
+.guy-notes text {
+    font-size: 16px;
+    fill: var(--other);
+}
+
+.ach-guy.pose-guitar .guy-notes text {
+    animation: guy-note 2.4s ease-out infinite;
+}
+
+.ach-guy.pose-guitar .guy-notes .n2 { animation-delay: 0.8s; }
+.ach-guy.pose-guitar .guy-notes .n3 { animation-delay: 1.6s; }
+
+@keyframes guy-note {
+    0% { opacity: 0; transform: translateY(8px); }
+    20% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-22px); }
+}
+
+.guy-paper {
+    fill: #fefae0;
+}
+
+.guy-paper-line {
+    fill: none;
+    stroke: #3a3a3a;
+    stroke-width: 1;
+    stroke-linecap: round;
+    transform-box: fill-box;
+    transform-origin: left center;
+}
+
+.ach-guy.pose-poetry .guy-paper-line.l1 {
+    animation: guy-ink 3s ease-in-out infinite;
+}
+
+.ach-guy.pose-poetry .guy-paper-line.l2 {
+    animation: guy-ink 3s ease-in-out infinite;
+    animation-delay: -1.5s;
+}
+
+@keyframes guy-ink {
+    0% { transform: scaleX(0); }
+    70%, 100% { transform: scaleX(1); }
+}
+
+.guy-pen {
+    fill: none;
+    stroke: #111111;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.ach-guy.pose-poetry .guy-writing-hand {
+    animation: guy-write 0.9s ease-in-out infinite;
+}
+
+@keyframes guy-write {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(3px, -1px); }
+    50% { transform: translate(6px, 0); }
+    75% { transform: translate(3px, 1px); }
+}
+
+.guy-desk {
+    fill: rgba(254, 250, 224, 0.35);
+}
+
+.guy-screen {
+    fill: #1a1a1a;
+    stroke: var(--cream);
+    stroke-width: 2.5;
+}
+
+.guy-laptop-base {
+    fill: var(--cream);
+}
+
+.guy-code {
+    transform-origin: left center;
+    transform-box: fill-box;
+    animation: guy-type 2.4s steps(6) infinite;
+}
+
+.guy-code.c1 { fill: var(--coding); }
+.guy-code.c2 { fill: var(--rowing); animation-delay: -0.6s; }
+.guy-code.c3 { fill: var(--cream); animation-delay: -1.2s; }
+.guy-code.c4 { fill: var(--coding); animation-delay: -1.8s; }
+
+@keyframes guy-type {
+    0% { transform: scaleX(0.2); }
+    70%, 100% { transform: scaleX(1); }
+}
+
+.ach-guy.coding .guy-arms-coding .guy-hand {
+    animation: guy-tap 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes guy-tap {
+    to { transform: translateY(-3px); }
+}
+
+.guy-boat {
+    fill: #bc6c25;
+}
+
+.guy-water path {
+    fill: none;
+    stroke: var(--rowing);
+    stroke-width: 3;
+    stroke-linecap: round;
+    opacity: 0.7;
+    animation: guy-water 3.2s linear infinite;
+}
+
+@keyframes guy-water {
+    to { transform: translateX(-60px); }
+}
+
+.guy-oar line {
+    stroke: var(--cream);
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.blade-purple {
+    fill: #5033b0;
+}
+
+.blade-black {
+    fill: #161616;
+}
+
+.blade-stripe {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+.guy-seat {
+    transition: translate 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.ach-guy.rowing .guy-seat {
+    translate: 24px 10px;
+}
+
+.ach-guy.rowing .guy-body {
+    transform-origin: 88px 132px;
+    animation: guy-lean 2.4s ease-in-out infinite;
+}
+
+@keyframes guy-lean {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+}
+
+.ach-guy.rowing .guy-oar {
+    transform-origin: 52px 112px;
+    animation: guy-stroke 2.4s ease-in-out infinite;
+}
+
+@keyframes guy-stroke {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+.ach-tabs {
+    --tab-w: 150px;
+    position: relative;
+    margin-top: 34px;
+    display: flex;
+    padding: 6px;
+    border-radius: 15px;
+    background: #1d1d1a;
+    border: 3px solid rgba(254, 250, 224, 0.28);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+}
+
+.ach-tab-pill {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: var(--tab-w);
+    height: calc(100% - 12px);
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid var(--coding);
+    box-shadow: 0 0 10px rgba(76, 217, 100, 0.25);
+    transform: translateX(calc(var(--tab-index, 0) * var(--tab-w)));
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ach-tabs.rowing .ach-tab-pill {
+    border-color: var(--rowing);
+    box-shadow: 0 0 10px rgba(30, 111, 217, 0.25);
+}
+
+.ach-tabs.other .ach-tab-pill {
+    border-color: var(--other);
+    box-shadow: 0 0 10px rgba(245, 197, 66, 0.25);
+}
+
+.ach-tabs .ach-tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: var(--tab-w);
+    height: 52px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: rgba(254, 250, 224, 0.55);
+    font-family: "Indie Flower", cursive;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.ach-tabs .ach-tab:focus {
+    outline: none;
+}
+
+.ach-tabs .ach-tab:focus-visible {
+    outline: 2px solid var(--coding);
+    outline-offset: -4px;
+    border-radius: 10px;
+}
+
+.ach-tabs .ach-tab:hover {
+    color: var(--cream);
+}
+
+.ach-tab svg {
+    width: 26px;
+    height: 26px;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ach-tabs .ach-tab.active {
+    color: var(--cream);
+}
+
+.tab-oars {
+    stroke-width: 1.6;
+}
+
+.tab-oar-shaft {
+    stroke-width: 2.2;
+}
+
+.ach-tabs.coding .ach-tab.active svg {
+    color: var(--coding);
+}
+
+.ach-tabs.rowing .ach-tab.active svg {
+    color: var(--rowing);
+}
+
+.ach-tabs.other .ach-tab.active svg {
+    color: var(--other);
+}
+
+.ach-tab.active svg {
+    animation: ach-tab-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ach-tab.active .tab-icon-detail {
+    fill: currentColor;
+    fill-opacity: 0.25;
+}
+
+@keyframes ach-tab-pop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.3) rotate(-8deg); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 1024px) {
+    .achievements {
+        height: auto;
+        padding: 4rem 1rem;
+        gap: 24px;
+    }
+
+    .ach-row {
+        gap: 12px;
+    }
+
+    .ach-stage .ach-node {
+        width: 84px;
+        height: 84px;
+    }
+
+    .ach-node-label {
+        font-size: 16px;
+    }
+
+    .ach-title {
+        font-size: 24px;
+    }
+
+    .ach-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 520px) {
+    .ach-tabs {
+        --tab-w: 100px;
+    }
+
+    .ach-tabs .ach-tab {
+        gap: 6px;
+        font-size: 14px;
+    }
+
+    .ach-tab svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .guy-code,
+    .guy-water path,
+    .ach-guy.rowing .guy-body,
+    .ach-guy.rowing .guy-oar,
+    .ach-guy .guy-head-wrap,
+    .ach-guy .guy-writing-hand,
+    .ach-guy .guy-paper-line,
+    .ach-guy .guy-eq text,
+    .ach-guy .guy-board-hand,
+    .ach-guy .guy-leg-a,
+    .ach-guy .guy-leg-b,
+    .ach-guy .guy-arms-hiking,
+    .ach-guy .ground-tufts,
+    .ach-guy.pose-dofe .guy-body,
+    .ach-guy .guy-strum,
+    .ach-guy .guy-notes text,
+    .ach-guy.coding .guy-arms-coding .guy-hand {
+        animation: none;
+    }
+}
