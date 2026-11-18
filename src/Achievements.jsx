@@ -10,8 +10,8 @@ const categories = {
     { flag: "gb", label: "Haven", date: "Nov 2026", title: "Haven Hackathon, London", description: "Came second place at the Haven hackathon in London in November 2026." },
   ],
   rowing: [
-    { label: "P'borough", date: "Jun 2024", title: "Peterborough Regatta", description: "Won my first rowing event at Peterborough Regatta in an octo." },
-    { label: "Kingston", date: "Jul 2024", title: "Kingston Regatta", description: "Won at Kingston Regattaom an octo." },
+    { label: "P'borough", date: "Jun 2024", title: "Peterborough Regatta", description: "Won my first rowing event at Peterborough Regatta in an octo, rowing at 4." },
+    { label: "Kingston", date: "Jul 2024", title: "Kingston Regatta", description: "Won at Kingston Regattaom an octo, rowing at 4." },
     { label: "Star's Head", date: "Nov 2024", title: "Star Club Head of the River", description: "Won both the Women's J14 coxed quads, rowing at 2, and the J14 octos, rowing at 3, on the same day." },
     { label: "H'smith", date: "Apr 2026", title: "Hammersmith Amateur Regatta", description: "Won the J15 coxed fours at Hammersmith Amateur Regatta, rowing at 2." },
     { label: "Poplar", date: "May 2026", title: "J15 Eights A Final", description: "Finished second in the Women's J15 eights A final, rowing at 4, behind St Paul's." },
