@@ -20,10 +20,10 @@ const categories = {
     { label: "Reading", date: "Oct 2026", title: "Reading Small Boats Head", description: "Won the Women's J16 coxless quads, rowing at 2 and making the calls." },
   ],
   other: [
+    { pose: "dofe", label: "DofE", date: "Year 9", title: "Bronze Duke of Edinburgh's Award", description: "Completed the Bronze Duke of Edinburgh's Award in Year 9." },
     { pose: "poetry", label: "Poetry", date: "Year 10", title: "Poetry Festival Finalist", description: "Reached the final of the poetry festival in Year 10, entered through school." },
     { pose: "physics", label: "Physics", date: "Year 10", title: "Junior Physics Olympiad", description: "Gold in the Junior Physics Olympiad in Year 10." },
     { pose: "maths", label: "Maths", date: "Year 10", title: "Senior Mathematical Challenge", description: "Silver in the Senior Mathematical Challenge in Year 10." },
-    { pose: "dofe", label: "DofE", date: "Year 9", title: "Bronze Duke of Edinburgh's Award", description: "Completed the Bronze Duke of Edinburgh's Award in Year 9." },
     { pose: "guitar", label: "Guitar", title: "Grade 3 Guitar", description: "Passed Grade 3 guitar." },
   ],
 };
