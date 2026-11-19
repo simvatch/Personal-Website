@@ -144,7 +144,7 @@ export default function FridgeApp() {
               "Content-Type": "application/json"
             },
             body: JSON.stringify({
-              name: itemToSubmit,
+              name: name,
               expires_at: newItemExpiry || null
             })
           }
